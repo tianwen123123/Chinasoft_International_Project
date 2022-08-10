@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: classify_backend
+dubbo:
+  application:
+    name: classify_backend
+    id: classify_backend
+  registry:
+    address: zookeeper://192.168.23.135:2181
+
+
+# 关闭Redis健康监测
+management:
+  health:
+    redis:
+      enabled: false
+server:
+  port: 8081

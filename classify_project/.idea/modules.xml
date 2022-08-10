@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_backend/classify_backend.iml" filepath="$PROJECT_DIR$/classify_parent/classify_backend/classify_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_common/classify_common.iml" filepath="$PROJECT_DIR$/classify_parent/classify_common/classify_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_interface/classify_interface.iml" filepath="$PROJECT_DIR$/classify_parent/classify_interface/classify_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_parent.iml" filepath="$PROJECT_DIR$/classify_parent/classify_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_service_provider/classify_service_provider.iml" filepath="$PROJECT_DIR$/classify_parent/classify_service_provider/classify_service_provider.iml" />
+    </modules>
+  </component>
+</project>

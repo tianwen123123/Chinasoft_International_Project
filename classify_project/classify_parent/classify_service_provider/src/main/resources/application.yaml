@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: classify_service_provider
+  datasource:
+    url: jdbc:mysql://192.168.23.135:3306/classify?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: renboyuan123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+dubbo:
+  application:
+    name: classify_service_provider
+    id: classify_service_provider
+  registry:
+    address: zookeeper://192.168.23.135:2181
+    server: true
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.csc.classify.service
+
+# 关闭Redis健康监测
+management:
+  health:
+    redis:
+      enabled: false
+server:
+  port: 8080
+mybatis:
+  type-aliases-package: com.csc.classify.pojo
+  mapper-locations: classpath:mapper/com/csc/classify/dao/*Dao.xml
+  # config-location: 核心配置文件位置
+

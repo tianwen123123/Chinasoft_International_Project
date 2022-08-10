@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="classify_interface" />
+        <module name="classify_service_provider" />
+        <module name="classify_backend" />
+        <module name="classify_common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="classify_backend" target="1.5" />
+      <module name="classify_common" target="1.5" />
+      <module name="classify_interface" target="1.5" />
+      <module name="classify_parent" target="1.5" />
+      <module name="classify_service_provider" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="classify_backend" options="" />
+      <module name="classify_common" options="" />
+      <module name="classify_interface" options="" />
+      <module name="classify_service_provider" options="" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="classify_backend:war">
+    <output-path>$PROJECT_DIR$/classify_parent/classify_backend/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>classify_backend</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="classify_backend-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="classify_backend:war exploded" />
+    </root>
+  </artifact>
+</component>

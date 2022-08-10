@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="classify_parent:war">
+    <output-path>$PROJECT_DIR$/classify_parent/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>classify_parent</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="classify_parent-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="classify_parent:war exploded" />
+    </root>
+  </artifact>
+</component>
