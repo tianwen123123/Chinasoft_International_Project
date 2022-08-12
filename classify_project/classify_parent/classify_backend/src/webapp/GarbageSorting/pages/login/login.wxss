@@ -1,0 +1,48 @@
+/* pages/login/login.wxss */
+.page-body {
+  padding-top: 270rpx;
+}
+.input-container {
+  margin: 20rpx auto;
+  border-radius: 30rpx;
+  width: 600rpx;
+  height: 120rpx;
+  border: rgb(143, 143, 143) 1px solid;
+  padding-left: 20rpx;
+}
+.input-text {
+  text-align: left;
+}
+.input-container input{
+  border: 0;
+  float: left;
+  width:80%;
+  height:120rpx;
+  font-size:50rpx;
+  margin-top: auto;
+}
+
+.input-container image {
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+}
+.operation{
+  height: 150rpx;
+  width: 80%;
+  margin: auto;
+}
+.login{
+  margin-top: 10px;
+  padding-top: 20rpx;
+  font-size:40rpx;
+  display: inline-block;
+  position: relative;
+  left: 60rpx;
+}
+.registered{
+  position:relative;
+  left: 90rpx;
+}

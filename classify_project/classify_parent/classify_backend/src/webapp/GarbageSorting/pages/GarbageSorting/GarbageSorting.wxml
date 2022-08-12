@@ -1,0 +1,4 @@
+<!--pages/GarbageSorting/GarbageSorting.wxml-->
+<button type="primary" bindtap="PhotoRecognition" class="Button">照片识别</button>
+<button type="primary" bindtap="VedioRecognition" class="Button" >视频识别</button>
+
