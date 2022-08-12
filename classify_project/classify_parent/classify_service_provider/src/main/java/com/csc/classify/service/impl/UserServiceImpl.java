@@ -3,6 +3,7 @@ package com.csc.classify.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.csc.classfiy.service.UserService;
 import com.csc.classify.dao.UserDao;
+import com.csc.classify.pojo.User4Login;
 import com.csc.classify.pojo.User4Register;
 import com.csc.classify.result.MessageConstant;
 import com.csc.classify.result.Result;
@@ -25,6 +26,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 注册
+     *
      * @param user4Register
      * @return
      */
@@ -56,6 +58,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 发送验证码
+     *
      * @param telephone
      * @return
      */
@@ -77,5 +80,14 @@ public class UserServiceImpl implements UserService {
             if (jedis != null)
                 jedis.close();
         }
+    }
+
+
+    public Result login(User4Login user4Login) {
+        Integer id = userDao.login(user4Login);
+        if (id != null)
+            return new Result(true, MessageConstant.LOGIN_SUCCESS);
+        else
+            return new Result(false,MessageConstant.USERNAME_OR_PASSWORD_WRONG);
     }
 }

@@ -3,6 +3,7 @@ package com.csc.classify.result;
 import java.io.Serializable;
 
 public class MessageConstant implements Serializable {
+
     //私有构造
     private MessageConstant() {
     }
@@ -22,4 +23,14 @@ public class MessageConstant implements Serializable {
     public static final String TELEPHONE_NOT_NULL = "手机号不能为空";
     public static final String SEND_SUCCESS = "验证码发送成功";
     public static final String SEND_FAIL = "验证码发送失败";
+    public static final String LOGIN_FAIL = "登陆失败";
+    public static final String LOGIN_SUCCESS = "登陆成功";
+    public static final String USERNAME_OR_PASSWORD_WRONG = "用户名或密码错误";
+    public static final String VIDEO_NOT_NULL = "视频不能为空";
+    public static final String VIDEO_FORMAT_WRONG = "视频格式错误";
+    public static final String VIDEO_UPLOAD_FAIL = "视频上传失败";
+    public static final String VIDEO_UPLOAD_SUCCESS = "视频上传成功";
+    public static final String VIDEO_TIMEOUT = "视频超时";
+    public static final String PROCESS_FAIL = "视频处理失败";
+    public static final String PROCESS_SUCCESS = "视频处理成功";
 }

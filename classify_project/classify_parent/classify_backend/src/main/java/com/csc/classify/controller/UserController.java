@@ -2,6 +2,7 @@ package com.csc.classify.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.csc.classfiy.service.UserService;
+import com.csc.classify.pojo.User4Login;
 import com.csc.classify.pojo.User4Register;
 import com.csc.classify.result.MessageConstant;
 import com.csc.classify.result.Result;
@@ -15,10 +16,11 @@ public class UserController {
 
     /**
      * 注册
+     *
      * @param user4Register
      * @return
      */
-    @PostMapping("/user")
+    @PutMapping("/user")
     public Result register(@RequestBody User4Register user4Register) {
         //检验是否有空
         if (user4Register.getPassword() == null || user4Register.getReconfirm_password() == null || user4Register.getTelephone() == null || user4Register.getValidate_code() == null)
@@ -44,6 +46,7 @@ public class UserController {
 
     /**
      * 发送验证码
+     *
      * @param telephone
      * @return
      */
@@ -65,6 +68,33 @@ public class UserController {
             e.printStackTrace();
             return new Result(false, MessageConstant.SEND_FAIL);
         }
+        return result;
+    }
+
+    /**
+     * 登录
+     *
+     * @return
+     */
+    @PostMapping("/user")
+    public Result login(@RequestBody User4Login user4Login) {
+        String telephone = user4Login.getTelephone();
+        if (telephone == null) {
+            return new Result(false, MessageConstant.TELEPHONE_NOT_NULL);
+        }
+        String reg = "^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\\d{8}$";
+        if (!telephone.matches(reg)) {
+            return new Result(false, MessageConstant.TELEPHONE_WRONG);
+        }
+
+        Result result = null;
+        try {
+            result = userService.login(user4Login);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.LOGIN_FAIL);
+        }
+
         return result;
     }
 }

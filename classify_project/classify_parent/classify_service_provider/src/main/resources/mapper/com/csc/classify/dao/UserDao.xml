@@ -12,7 +12,14 @@
 
     <insert id="register" parameterType="user4register">
         insert into user(id, nickname, gender, telephone, address, password)
-        values(null, #{nickname}, #{gender}, #{telephone}, #{address}, #{password});
+        values (null, #{nickname}, #{gender}, #{telephone}, #{address}, #{password});
     </insert>
+
+    <select id="login" parameterType="user4login" resultType="integer">
+        select id
+        from user
+        where telephone = #{telephone}
+          and password = #{password}
+    </select>
 
 </mapper>

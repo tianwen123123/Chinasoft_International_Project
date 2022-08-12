@@ -1,5 +1,6 @@
 package com.csc.classify.dao;
 
+import com.csc.classify.pojo.User4Login;
 import com.csc.classify.pojo.User4Register;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,4 +11,7 @@ public interface UserDao {
 
     //用户注册
     public void register(User4Register user4Register);
+
+    //用户登录
+    public Integer login(User4Login user4Login);
 }
