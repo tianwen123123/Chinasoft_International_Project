@@ -6,4 +6,6 @@ import com.csc.classify.result.Result;
 
 public interface UserService {
     public Result register(User4Register user4Register);
+
+    public Result sendValidateCode(String telephone);
 }

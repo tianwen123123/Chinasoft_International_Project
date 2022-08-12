@@ -7,6 +7,8 @@ import com.csc.classify.pojo.User4Register;
 import com.csc.classify.result.MessageConstant;
 import com.csc.classify.result.Result;
 import com.csc.classify.utils.RedisUtils;
+import com.csc.classify.utils.SMSUtils_Tencent;
+import com.csc.classify.utils.ValidateCodeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import redis.clients.jedis.Jedis;
@@ -21,6 +23,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RedisUtils redisUtils;
 
+    /**
+     * 注册
+     * @param user4Register
+     * @return
+     */
     public Result register(User4Register user4Register) {
         //1.先查询手机号是否被注册过
         String telephone = user4Register.getTelephone();
@@ -45,5 +52,30 @@ public class UserServiceImpl implements UserService {
         //4.注册
         userDao.register(user4Register);
         return new Result(true, MessageConstant.REGISTER_SUCCESS);
+    }
+
+    /**
+     * 发送验证码
+     * @param telephone
+     * @return
+     */
+    public Result sendValidateCode(String telephone) {
+        Jedis jedis = null;
+        try {
+
+            Integer valCode = ValidateCodeUtils.generateValidateCode(6);
+            SMSUtils_Tencent.sendShortMessage(new String[]{telephone}, valCode.toString());
+            //存入redis里
+            jedis = redisUtils.getJedis();
+            jedis.setex(telephone, 300, valCode.toString());
+
+            return new Result(true, MessageConstant.SEND_SUCCESS);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.SEND_FAIL);
+        } finally {
+            if (jedis != null)
+                jedis.close();
+        }
     }
 }

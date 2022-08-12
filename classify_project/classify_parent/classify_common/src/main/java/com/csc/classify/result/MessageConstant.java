@@ -19,4 +19,7 @@ public class MessageConstant implements Serializable {
     public static final String TWICE_PASSWORD_NOT_EQUAL = "两次输入的密码不同";
     public static final String TELEPHONE_ALREADY_EXISTS = "手机号已经被注册";
     public static final String VALIDATE_CODE_WRONG = "验证码错误";
+    public static final String TELEPHONE_NOT_NULL = "手机号不能为空";
+    public static final String SEND_SUCCESS = "验证码发送成功";
+    public static final String SEND_FAIL = "验证码发送失败";
 }
