@@ -1,9 +1,8 @@
 // pages/GarbageSorting/GarbageSorting.js
 Page({
   data: {
-
+      Filepath:"",
   },
-
   onLoad(options) {
 
   },
@@ -13,32 +12,60 @@ Page({
   onShow() {
 
   },
-
-
   PhotoRecognition(){
+    var that = this
     wx.chooseMedia({
       camera: 'back',
       count: 1,
       mediaType: ['image'],
       sourceType: ['album', 'camera'],
-      success: (res) => {
-          console.log(res.tempFiles.tempFilePath)
-          wx.showLoading({
-            title: '识别中',
-          })
+      camera: 'back',
+      success(res) {
+        that.setData({
+          Filepath:res.tempFiles[0].tempFilePath
+        })
+        console.log(res.tempFiles[0].tempFilePath)
+        wx.uploadFile({
+          filePath: that.data.Filepath,
+          name: 'imagefile',
+          url: '',
+          success: (result) => {
+            wx.navigateTo({
+              url: '../result/result?Filepath='+that.data.Filepath,
+            })
+          },
+          fail: (res) => {},
+          complete: (res) => {},
+        })
       },
       fail: (res) => {},
       complete: (res) => {},
     })
   },
   VedioRecognition(){
+    var that = this
     wx.chooseMedia({
       camera: 'back',
       count: 1,
       mediaType: ['video'],
       sourceType: ['album', 'camera'],
-      success: (res) => {
-          console.log(res.tempFiles.tempFilePath)
+      success(res) {
+        that.setData({
+          Filepath:res.tempFiles[0].tempFilePath
+        })
+        console.log(res.tempFiles[0].tempFilePath)
+        wx.uploadFile({
+          filePath: that.data.Filepath,
+          name: 'vediofile',
+          url: '',
+          success: (result) => {
+            wx.navigateTo({
+              url: '../result/result?Filepath='+that.data.Filepath,
+            })
+          },
+          fail: (res) => {},
+          complete: (res) => {},
+        })
       },
       fail: (res) => {},
       complete: (res) => {},

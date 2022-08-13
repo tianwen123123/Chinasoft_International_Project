@@ -1,0 +1,15 @@
+/* pages/result/result.wxss */
+.container{
+  width: 100%;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.container text{
+  font-size: 50rpx;
+  margin-top: 100rpx;
+}
+.resultimage{
+  width: 60%;
+  border:teal solid 1px;
+}
