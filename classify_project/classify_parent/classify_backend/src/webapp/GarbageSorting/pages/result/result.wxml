@@ -1,5 +1,5 @@
 <!--pages/result/result.wxml-->
 <view class="container">
-    <image class="resultimage" src="{{Filepath}}"></image>
+    <image class="resultimage" src="{{Filepath}}" mode="aspectFit"></image>
     <text>识别结果:{{result}}</text>
 </view>

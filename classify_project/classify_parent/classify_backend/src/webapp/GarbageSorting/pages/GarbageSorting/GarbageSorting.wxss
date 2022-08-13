@@ -1,9 +1,16 @@
 /* pages/GarbageSorting/GarbageSorting.wxss */
-
-.Button{
+/* .Button{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
   border-radius: 40rpx;
+  } */
+  .Button {
+    margin-top: 100px;
+    padding:0;
+    width: 150px !important;
+    height:150px !important;
+    line-height:150px;
+    border-radius: 100px;
   }

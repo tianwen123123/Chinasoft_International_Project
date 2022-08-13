@@ -7,7 +7,7 @@
 }
 .container text{
   font-size: 50rpx;
-  margin-top: 100rpx;
+  margin-top: 60rpx;
 }
 .resultimage{
   width: 60%;
