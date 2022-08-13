@@ -67,7 +67,7 @@ Page({
 						wx.setStorageSync('password',this.data.password);
 						setTimeout(function(){
 						wx.navigateTo({
-							url: '../map/map',
+							url: '../GarbageSorting/GarbageSorting',
 							success: function (res) {}
 						})},500)
 

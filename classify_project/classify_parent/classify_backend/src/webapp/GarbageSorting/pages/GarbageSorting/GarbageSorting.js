@@ -35,7 +35,11 @@ Page({
             })
           },
           fail: (res) => {},
-          complete: (res) => {},
+          complete: (res) => {
+            wx.navigateTo({
+              url: '../result/result?Filepath='+that.data.Filepath,
+            })
+          },
         })
       },
       fail: (res) => {},
