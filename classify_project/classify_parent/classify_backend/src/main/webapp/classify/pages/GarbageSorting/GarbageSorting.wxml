@@ -1,4 +1,10 @@
 <!--pages/GarbageSorting/GarbageSorting.wxml-->
-<button type="primary" bindtap="PhotoRecognition" class="Button">照片识别</button>
+<view class="picdiv">
+<image src="{{Filepath}}" mode="aspectFit" class="Image"></image>
+</view>
+<button type="primary" bindtap="regition">识别</button>
+<button type="primary" bindtap="PhotoRecognition" class="Button">选择照片</button>
 <button type="primary" bindtap="VedioRecognition" class="Button" >视频识别</button>
+
+
 
