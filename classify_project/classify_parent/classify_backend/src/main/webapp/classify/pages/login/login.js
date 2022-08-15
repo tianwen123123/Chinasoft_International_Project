@@ -41,17 +41,22 @@ Page({
 			wx.showToast({
 				title: '登录中',
 				icon: 'loading',
-				duration: 2000
+				duration: 1000
 			});
 			
 			wx.request({
-				url: "",
+				url: "http://localhost:8081/user",
+				method: "post",
 				data: {
-					username: this.data.username,
+					telephone: this.data.username,
 					password: this.data.password,
 					method: "login"
 				},
+				header: { 
+					'content-type': 'application/json'
+				}, 
 				success: (res) => {
+					console.log("1111111")
 					console.log(res.header["Set-Cookie"]);
 					if (res.data == 1) {
 						wx.showToast({
