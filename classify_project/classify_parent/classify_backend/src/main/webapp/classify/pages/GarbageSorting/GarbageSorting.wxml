@@ -15,7 +15,7 @@
 </view>
 
 <!-- <button type="primary" bindtap="PhotoRecognition" class="Button">选择照片</button> -->
-<button type="primary" bindtap="VedioRecognition" class="Button" >视频识别</button>
+<!-- <button type="primary" bindtap="VedioRecognition" class="Button" >视频识别</button> -->
 <view class="bottomdiv"></view>
 
 
