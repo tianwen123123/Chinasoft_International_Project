@@ -5,7 +5,9 @@
     "pages/GarbageSorting/GarbageSorting",
     "pages/login/login",
     "pages/registered/registered",
-    "pages/result/result"
+    "pages/result/result",
+    "pages/studentinfo/studentinfo",
+    "pages/healthcode/healthcode"
   ],
   "window":{
     "backgroundTextStyle":"light",

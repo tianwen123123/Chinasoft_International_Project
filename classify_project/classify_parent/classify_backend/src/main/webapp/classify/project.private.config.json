@@ -35,6 +35,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/studentinfo/studentinfo",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/healthcode/healthcode",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

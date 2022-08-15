@@ -1,4 +1,4 @@
-// pages/GarbageSorting/GarbageSorting.js
+// pages/healthcode/healthcode.js
 Page({
   data: {
       Filepath:"../../images/_plus.png",

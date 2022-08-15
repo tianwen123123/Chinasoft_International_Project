@@ -1,0 +1,42 @@
+/* pages/healthcode/healthcode.wxss */
+.picdiv{
+  width: 80%;
+  border: 1px solid #424242;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto 30px auto;
+}
+.bottomdiv{
+  height: 300px;
+}
+.Image{
+  width: 80%;
+  margin: 20px 0;
+}
+.Button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  border-radius: 40rpx;
+  }
+.resultdiv{
+  width: 100%;
+  margin: 30px auto;
+}
+.resultimgdiv{
+  width: 80%;
+  margin: 0 auto;
+}
+.resultimg{
+    margin: 0;
+}
+.resulttextinfo{
+  width: 80%;
+  margin: 20rpx auto;
+  font-size: 40rpx;
+}
+.resulttextinfo text{
+  font-size: 50rpx;
+}
