@@ -6,8 +6,8 @@ Page({
 	},
 	onLoad: function () {
       this.setData({
-		  // username : wx.getStorageSync('username'),
-		  // password : wx.getStorageSync('password'),
+		  username : wx.getStorageSync('username'),
+		  password : wx.getStorageSync('password'),
 	  })
   },
 	inputUsername: function (e) {

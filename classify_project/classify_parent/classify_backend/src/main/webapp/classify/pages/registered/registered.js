@@ -121,10 +121,11 @@ Page({
           icon:'none',
         })
           wx.request({
-            url: '',
-            data:{
-              phone:phone
-            },
+            url: 'http://localhost:8081/user?telephone='+this.data.phone,
+            method: "GET",
+            header: { 
+              'content-type': 'application/json'
+            }, 
             success(res){
               console.log(res)
             }
