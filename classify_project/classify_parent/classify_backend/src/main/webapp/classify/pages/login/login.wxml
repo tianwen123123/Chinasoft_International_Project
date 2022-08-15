@@ -4,7 +4,7 @@
 
     <view class="input-container">
       <image src="../../images/people.png"></image>
-      <input placeholder="账号" placeholder-class="input-text" value="{{username}}" bindinput="inputUsername"/>
+      <input placeholder="手机号" placeholder-class="input-text" value="{{username}}" bindinput="inputUsername"/>
     </view>
 
     <view class="input-container">
