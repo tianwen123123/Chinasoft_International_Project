@@ -2,23 +2,23 @@
 <view class="topdiv"></view>
 <view class='content'>
   <form bindsubmit="formSubmit">
-    <view class='phone-box'>
-      <text class='phone'>手机号</text>
-      <input name="phone" type='number' placeholder="请输入手机号" maxlength='11'
+    <view class='telephone-box'>
+      <text class='telephone'>手机号</text>
+      <input name="telephone" type='number' placeholder="请输入手机号" maxlength='11'
         class='number' bindinput='phoneInput' />
     </view>
-    <view class='phone-box'>
-      <text class='phone'>验证码</text>
-      <input name="Code" placeholder="请输入验证码" class='number' placeholder-style='color:#bbb' bindinput="codeInput" />
-      <view bindtap='getcode' class='getCode'>{{code}}</view>
+    <view class='telephone-box'>
+      <text class='telephone'>验证码</text>
+      <input name="validate_code" placeholder="请输入验证码" class='number' placeholder-style='color:#bbb' bindinput="codeInput" />
+      <view bindtap='getcode' class='getCode'>{{codestr}}</view>
     </view>
-    <view class='phone-box'>
-      <text class='phone'>密码</text>
+    <view class='telephone-box'>
+      <text class='telephone'>密码</text>
       <input name="password" placeholder="请输入密码" class='number' placeholder-style='color:#bbb' bindinput="passwordInput" />
     </view>
-    <view class='phone-box'>
-      <text class='phone'>确认密码</text>
-      <input name="confirmpassword" placeholder="请再次输入密码" class='number' placeholder-style='color:#bbb' bindinput="confirmpasswordInput" />
+    <view class='telephone-box'>
+      <text class='telephone'>确认密码</text>
+      <input name="reconfirm_password" placeholder="请再次输入密码" class='number' placeholder-style='color:#bbb' bindinput="confirmpasswordInput" />
     </view>
     <button formType="submit" class='submit'>注册</button>
   </form>

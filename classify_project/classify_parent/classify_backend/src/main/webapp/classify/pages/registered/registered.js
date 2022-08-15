@@ -4,25 +4,26 @@ Page({
     // 验证手机号
     codeChange: true,
     isPhoneRight:false,
-    hongyzphone: '',
-    // 验证码是否正确
-    zhengLove: true,
-    huoLove: '',
-    code: '获取验证码',
-    Password:'',
-    confirmPassword:'',
+    telephone: '',
+    isconfirm: true,
+    validate_code:'',
+    codestr: '获取验证码',
+    reconfirm_password:'',
+    password:'',
   },
   // 手机验证
   phoneInput: function (e) {
-    let phone = e.detail.value;
+    var par = /^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/
+    let telephone = e.detail.value;
+    console.log(telephone)
     this.setData({ 
-      hongyzphone: phone 
+      telephone: telephone 
     })
-    if (!(/^1[34578]\d{9}$/.test(phone))) {
+    if (!(par.test(telephone))) {
       this.setData({
         isPhoneRight: false
       })
-      if (phone.length >= 11) {
+      if (telephone.length >= 11) {
         wx.showToast({
           title: '手机号输入有误',
           icon: 'none',
@@ -37,20 +38,19 @@ Page({
   },
   // 验证码输入
   codeInput: function (e) {
-    let yanLove = e.detail.value;
-    let huoLove = this.data.huoLove;
+    let validate_code = e.detail.value;
     this.setData({
-      yanLove: yanLove,
-      zhengLove: false,
+      validate_code: validate_code,
+      isconfirm: false,
     })
-    if (yanLove.length >= 4) {
-      if (yanLove == huoLove) {
+    if (validate_code.length >= 6) {
+      if (validate_code == '') {
         this.setData({
-          zhengLove: true,
+          isconfirm: true,
         })
       } else {
         this.setData({
-          zhengLove: false,
+          isconfirm: false,
         })
         wx.showToast({
           title: '验证码有误',
@@ -63,30 +63,30 @@ Page({
   passwordInput:function(e){
     let password = e.detail.value
     this.setData({
-      Password:password
+      password:password
     })
   },
   confirmpasswordInput:function(e){
-    let confirmpassword = e.detail.value
+    let reconfirm_password = e.detail.value
     this.setData({
-      confirmPassword:confirmpassword
+      reconfirm_password:reconfirm_password
     })
   },
   isPasswordSame:function(){
-    if(this.data.Password == this.data.confirmPassword){
+    if(this.data.password == this.data.reconfirm_password){
       return true
     }else{
       return false
     }
   },
-  // 验证码按钮
+  // 获取验证码按钮
   getcode:function(res){
     let codeChange = this.data.codeChange;
     console.log(codeChange)
     let isPhoneRight = this.data.isPhoneRight;
     console.log(isPhoneRight)
-    let phone = this.data.hongyzphone;
-    console.log(phone)
+    let telephone = this.data.telephone;
+    console.log(telephone)
     let n = 59;
     let that = this;
     if (!isPhoneRight) {
@@ -98,63 +98,58 @@ Page({
     } else 
     {
       if (codeChange) {
-        // this.setData({
-        //   codeChange: false
-        // })
-
+        console.log("发送验证码请求")
+        that.setData({
+            codeChange:false
+        })
         let time = setInterval(function () {
           let str = '(' + n + ')' + '重新获取'
           that.setData({
-            code: str
+            codestr: str
           })
           if (n <= 0) {
             that.setData({
               codeChange: true,
-              code: '重新获取'
+              codestr: '重新获取'
             })
             clearInterval(time);
           }
           n--;
         }, 1000);
-        wx.showToast({
-          title: '验证码已发送',
-          icon:'none',
-        })
           wx.request({
             url: '',
             data:{
-              phone:phone
+              telephone:telephone
             },
             success(res){
               console.log(res)
             }
           })
-        //获取验证码接口写在这里
-        //例子 并非真实接口
-        // app.agriknow.sendMsg(phone).then(res => {
-        //   console.log('请求获取验证码.res =>', res)
-        // }).catch(err => {
-        //   console.log(err)
-        // })
       }
     }
   },
   //form表单提交
   formSubmit(e){
-    if(this.isPasswordSame()){
-    let val = e.detail.value 
+    // console.log(e)
+    var val = e.detail.value 
     console.log('val', val)
-    var phone = val.phone //电话
-    var Code = val.Code //验证码
-    var openid = wx.getStorageSync('openid')
-    console.log(openid)
- 
+    var telephone = val.telephone //电话
+    var Code = val.validate_code //验证码
+    var Password = val.password  //密码
+    var reconfirm_password = val.reconfirm_password  //确认密码
+    if(telephone == "" || Code == ""|| Password == ""|| reconfirm_password == ""){
+      wx.showToast({
+        title: '请输入完整信息',
+        icon:'error',
+        duration:1000
+      })
+    }else{
+    if(this.isPasswordSame()){
+      console.log("注册")
     wx.request({
       url: '',
       data:{
-        phone:phone,
-        code:Code,
-        openid:openid
+        telephone:telephone,
       },
       success(res){
         console.log(res)
@@ -168,8 +163,10 @@ Page({
   }else{
     wx.showToast({
       title: '密码不一致',
-      icon:'error'
+      icon:'error',
+      duration:1000
     })
   }
+}
 }
 })
