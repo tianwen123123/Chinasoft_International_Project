@@ -131,6 +131,7 @@ Page({
     // console.log(e)
     var val = e.detail.value 
     console.log('val', val)
+    var par = /^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/
     var telephone = val.telephone //电话
     var Code = val.validate_code //验证码
     var Password = val.password  //密码
@@ -141,7 +142,14 @@ Page({
         icon:'error',
         duration:1000
       })
-    }else{
+    }else if(!(par.test.telephone)){
+      wx.showToast({
+        title: '手机号格式错误',
+        icon:'error',
+        duration:1000
+      })
+    }
+    else{
     if(this.isPasswordSame()){
       console.log("注册")
     wx.request({
@@ -154,10 +162,24 @@ Page({
         'validate_code':Code
       },
       success(res){
+        let message = res.data.message
         console.log(res)
-        if(res){
-          wx.navigateTo({
-            url: '../login/login',
+        if(res.data.flag==true){
+          wx.showToast({
+            title: message,
+            icon:'success',
+            duration:1000
+          })
+          setTimeout(function(){
+            wx.navigateTo({
+              url: '../login/login?telephone='+telephone+"&password="+Password,
+            })
+          },500)
+        }else{
+          wx.showToast({
+            title: message,
+            icon:'success',
+            duration:1000
           })
         }
       }

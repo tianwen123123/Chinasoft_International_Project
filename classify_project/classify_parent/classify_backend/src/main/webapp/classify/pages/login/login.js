@@ -4,11 +4,17 @@ Page({
 		telephone: null,
 		password: null
 	},
-	onLoad: function () {
+	onLoad: function (options) {
       this.setData({
 		  telephone : wx.getStorageSync('telephone'),
-		  password : wx.getStorageSync('password'),
-	  })
+      password : wx.getStorageSync('password'),
+    })
+    if(!(options == null || options == '')){
+      this.setData({
+        telephone:options.telephone,
+        password:options.password,
+      })
+    }
   },
 	inputTelephone: function (e) {
     let phone = e.detail.value
