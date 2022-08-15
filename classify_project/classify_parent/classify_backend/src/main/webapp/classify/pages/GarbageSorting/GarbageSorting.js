@@ -4,10 +4,13 @@ Page({
       Filepath:"../../images/_plus.png",
       resultimgpath:"../../images/_plus.png",
       resultText:"信息",
-      isshow:false
+      isshow:false,
+      telephone:'',
   },
   onLoad(options) {
-
+      this.setData({
+        telephone:options.telephone
+      })
   },
   onReady() {
 
@@ -54,9 +57,9 @@ Page({
       mask: true,
     })
     wx.uploadFile({
-      url: '',
+      url: 'http://localhost:8081/picture?telephone'+that.data.telephone,
       filePath: that.data.Filepath,
-      name: 'imagefile',
+      name: 'imgFile',
       success: (res) => {
         var message = res.message
         console.log(res)

@@ -90,9 +90,10 @@ Page({
 						});
 						wx.setStorageSync('telephone',this.data.telephone);
 						wx.setStorageSync('password',this.data.password);
+						var phone = this.data.telephone
 						setTimeout(function(){
 						wx.navigateTo({
-							url: '../GarbageSorting/GarbageSorting',
+							url: '../GarbageSorting/GarbageSorting?telephone='+phone,
 							success: function (res) {}
 						})},500)
 					} else {
