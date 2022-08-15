@@ -10,7 +10,7 @@ Page({
 		  password : wx.getStorageSync('password'),
 	  })
   },
-	inputUsername: function (e) {
+	inputTelephone: function (e) {
     let phone = e.detail.value
 		this.setData({
 			telephone: phone
