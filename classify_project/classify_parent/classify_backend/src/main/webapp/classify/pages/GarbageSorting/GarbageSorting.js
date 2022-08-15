@@ -47,7 +47,7 @@ Page({
     }
     this.setData({
       resultimgpath:that.data.Filepath,
-      // isshow:true
+      isshow:true
     })
     wx.showLoading({
       title: '识别中',
