@@ -34,7 +34,7 @@ public class PictureController {
      * @return
      */
     @PostMapping("/picture")
-    public Result upload(@RequestParam("imgFile") MultipartFile imgFile) {
+    public Result upload(@RequestParam("imgFile") MultipartFile imgFile,@RequestParam("telephone") String telephone) {
         //获取原始字符串名称
         String originalName = imgFile.getOriginalFilename();
         //获取最后一个.的位置
@@ -52,9 +52,8 @@ public class PictureController {
         }
 
         //向redis中添加图片名称
-        //Todo:动态获取手机号
         Jedis jedis = redisUtils.getJedis();
-        jedis.setex("18202275875/"+"picture", 60 * 5, fileName);
+        jedis.setex(telephone+"/picture", 60 * 5, fileName);
         jedis.close();
 
         return new Result(true, MessageConstant.PIC_UPLOAD_SUCCESS, fileName);
@@ -70,20 +69,18 @@ public class PictureController {
     public Result classify(@RequestParam("telephone") String telephone) {
         Jedis jedis = redisUtils.getJedis();
         //Todo:动态电话号码
-        //jedis.get(telephone)
-        String value = jedis.get("18202275875/picture");
+        String value = jedis.get(telephone+"/picture");
+        Result result = null;
         if (value == null) {
             return new Result(false, MessageConstant.PIC_TIMEOUT);
         } else {
             try {
-                pictureService.classify(value);
+                result = pictureService.classify(value);
             } catch (Exception e) {
                 e.printStackTrace();
                 return new Result(false, MessageConstant.CLASSIFY_FAIL);
             }
         }
-
-        //todo:换构造，还要返回classify结果
-        return new Result(true,MessageConstant.CLASSIFY_SUCCESS);
+        return result;
     }
 }

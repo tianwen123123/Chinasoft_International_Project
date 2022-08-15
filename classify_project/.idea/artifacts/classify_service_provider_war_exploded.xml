@@ -68,7 +68,7 @@
           <element id="library" level="project" name="Maven: javax.activation:javax.activation-api:1.2.0" />
           <element id="library" level="project" name="Maven: com.squareup.okhttp:logging-interceptor:2.7.5" />
           <element id="library" level="project" name="Maven: org.ini4j:ini4j:0.5.4" />
-          <element id="library" level="project" name="Maven: org.json:json:20211205" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.35" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:2.3.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:2.3.7.RELEASE" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.3" />

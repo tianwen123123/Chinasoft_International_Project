@@ -1,5 +1,7 @@
 package com.csc.classfiy.service;
 
+import com.csc.classify.result.Result;
+
 public interface PictureService {
-    public void classify(String picName);
+    public Result classify(String picName);
 }
