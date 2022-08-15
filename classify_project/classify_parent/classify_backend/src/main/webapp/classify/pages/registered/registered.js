@@ -117,10 +117,8 @@ Page({
           n--;
         }, 1000);
           wx.request({
-            url: '',
-            data:{
-              telephone:telephone
-            },
+            url: 'http://localhost:8081/user?telephone='+this.data.telephone,
+            method:'GET',
             success(res){
               console.log(res)
             }
@@ -147,9 +145,13 @@ Page({
     if(this.isPasswordSame()){
       console.log("注册")
     wx.request({
-      url: '',
+      url: 'http://localhost:8081/user',
+      method:'PUT',
       data:{
-        telephone:telephone,
+        'telephone':telephone,
+        'password':Password,
+        'reconfirm_password':reconfirm_password,
+        'validate_code':Code
       },
       success(res){
         console.log(res)
