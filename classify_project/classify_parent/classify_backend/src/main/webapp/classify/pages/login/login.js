@@ -1,20 +1,28 @@
 // pages/login/login.js
 Page({
 	data: {
-		username: null,
+		telephone: null,
 		password: null
 	},
 	onLoad: function () {
       this.setData({
-		  // username : wx.getStorageSync('username'),
-		  // password : wx.getStorageSync('password'),
+		  telephone : wx.getStorageSync('telephone'),
+		  password : wx.getStorageSync('password'),
 	  })
   },
 	inputUsername: function (e) {
+    let phone = e.detail.value
 		this.setData({
-			username: e.detail.value
+			telephone: phone
 		})
-		console.log("username:" + this.data.username);
+    console.log("telephone:" + phone);
+    if(phone.length>11){
+      wx.showToast({
+        title: '手机号输入有误',
+        icon: 'none',
+        duration: 1000
+      })
+    }
 	},
 	inputPassword: function (e) {
 		this.setData({
@@ -31,24 +39,33 @@ Page({
     })
   },
 	login: function () {
-		if (this.data.username == null || this.data.password == null) {
+    var par = /^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/
+		if (this.data.telephone==null||this.data.password==null||this.data.telephone==''||this.data.password=='') {
 			wx.showToast({
-				title: '请输入账号密码',
+				title: '输入不能为空',
 				icon: 'error',
 				duration: 1000
 			});
-		} else {
+    }
+    else if(!(par.test(this.data.telephone)) || this.data.telephone.length != 11){
+      wx.showToast({
+				title: '手机号格式有误',
+				icon: 'error',
+				duration: 1000
+			});
+    }
+    else {
 			wx.showToast({
 				title: '登录中',
 				icon: 'loading',
 				duration: 1000
 			});
-			
+
 			wx.request({
 				url: "http://localhost:8081/user",
 				method: "post",
 				data: {
-					telephone: this.data.username,
+					telephone: this.data.telephone,
 					password: this.data.password,
 					method: "login"
 				},
@@ -56,11 +73,12 @@ Page({
 					'content-type': 'application/json'
 				}, 
 				success: (res) => {
-					console.log("1111111")
+          console.log(res)
+          var message = res.data.message
 					console.log(res.header["Set-Cookie"]);
-					if (res.data == 1) {
+					if (res.data.flag == true) {
 						wx.showToast({
-							title: '登录成功',
+							title: message,
 							icon: 'success',
 							duration: 1000
 						});
@@ -68,21 +86,19 @@ Page({
 						var str = j.split(';');
 						console.log(str[0]);
 						wx.setStorageSync('Cookie', str[0]);
-						wx.setStorageSync('username',this.data.username);
+						wx.setStorageSync('telephone',this.data.telephone);
 						wx.setStorageSync('password',this.data.password);
 						setTimeout(function(){
 						wx.navigateTo({
 							url: '../GarbageSorting/GarbageSorting',
 							success: function (res) {}
 						})},500)
-
 					} else {
 						wx.showToast({
-							title: '账号或密码有误',
+							title: message,
 							icon: "error",
 							duration: 1000
 						});
-						console.log(res)
 					}
 				}
 			})	
