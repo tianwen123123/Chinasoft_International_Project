@@ -43,7 +43,7 @@ Page({
       validate_code: validate_code,
       isconfirm: false,
     })
-    if (validate_code.length >= 6) {
+    if (validate_code.length > 6) {
       if (validate_code == '') {
         this.setData({
           isconfirm: true,
@@ -121,6 +121,13 @@ Page({
             method:'GET',
             success(res){
               console.log(res)
+              // var message = res.data.message
+              if(res.data.flag ==true){
+                wx.showToast({
+                  title: '验证码已发送',
+                  icon:'none'
+                })
+              }
             }
           })
       }
@@ -142,7 +149,7 @@ Page({
         icon:'error',
         duration:1000
       })
-    }else if(!(par.test.telephone)){
+    }else if(!(par.test(telephone))){
       wx.showToast({
         title: '手机号格式错误',
         icon:'error',
