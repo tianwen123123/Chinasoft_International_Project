@@ -82,10 +82,6 @@ Page({
 							icon: 'success',
 							duration: 1000
 						});
-						var j = res.header["Set-Cookie"];
-						var str = j.split(';');
-						console.log(str[0]);
-						wx.setStorageSync('Cookie', str[0]);
 						wx.setStorageSync('telephone',this.data.telephone);
 						wx.setStorageSync('password',this.data.password);
 						setTimeout(function(){
