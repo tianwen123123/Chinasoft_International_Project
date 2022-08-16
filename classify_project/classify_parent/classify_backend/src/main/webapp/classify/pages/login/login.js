@@ -62,11 +62,7 @@ Page({
 				title: '登录中',
 				icon: 'loading',
 				duration: 1000
-			});
-      // wx.reLaunch({
-      //   url: '../GarbageSorting/GarbageSorting?telephone='+'18203443820',
-      // })
-      
+			});  
 			wx.request({
 				url: getApp().globalData.webUrl+'/user',
 				method: "post",
