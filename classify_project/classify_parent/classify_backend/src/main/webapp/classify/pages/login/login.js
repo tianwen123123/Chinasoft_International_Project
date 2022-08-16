@@ -66,7 +66,11 @@ Page({
 				icon: 'loading',
 				duration: 1000
 			});
+      // wx.switchTab({
+      //   url: '../GarbageSorting/GarbageSorting',
+      // })
 
+      
 			wx.request({
 				url: "http://localhost:8081/user",
 				method: "post",
@@ -92,7 +96,7 @@ Page({
 						wx.setStorageSync('password',this.data.password);
 						var phone = this.data.telephone
 						setTimeout(function(){
-						wx.navigateTo({
+						wx.switchTab({
 							url: '../GarbageSorting/GarbageSorting?telephone='+phone,
 							success: function (res) {}
 						})},500)
