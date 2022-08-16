@@ -63,10 +63,9 @@ Page({
 				icon: 'loading',
 				duration: 1000
 			});
-      // wx.switchTab({
-      //   url: '../GarbageSorting/GarbageSorting',
+      // wx.reLaunch({
+      //   url: '../GarbageSorting/GarbageSorting?telephone='+'18203443820',
       // })
-
       
 			wx.request({
 				url: getApp().globalData.webUrl+'/user',
@@ -93,7 +92,7 @@ Page({
 						wx.setStorageSync('password',that.data.password);
 						var phone = that.data.telephone
 						setTimeout(function(){
-						wx.switchTab({
+						wx.reLaunch({
 							url: '../GarbageSorting/GarbageSorting?telephone='+phone,
 							success: function (res) {}
 						})},500)

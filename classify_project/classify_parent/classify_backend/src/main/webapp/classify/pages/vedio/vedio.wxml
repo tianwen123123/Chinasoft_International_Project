@@ -5,7 +5,7 @@
 </view>
 <view class="doublebutton">
   <button class="rego" bindtap="VedioRecognition">上传视频</button>
-  <button class="rego" bindtap="Realtimerecogn)">实时检测</button>
+  <!-- <button class="rego" bindtap="Realtimerecogn)">实时检测</button> -->
 </view>
 
 <button type="primary" bindtap="regition" class="Button">识别</button>

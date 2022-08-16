@@ -27,8 +27,11 @@
     margin: 0 70rpx;
   }
   .rego {
-    display:inline-block;
-    flex-direction: column;
+    /* display:inline-block;
+    flex-direction: column; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding:0;
     width: 145px !important;
     height:50px !important;
