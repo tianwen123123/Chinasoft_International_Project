@@ -8,7 +8,6 @@ Page({
       telephone:'',
   },
   onLoad(options) {
-    console.log(options)
       this.setData({
         telephone:options.telephone
       })

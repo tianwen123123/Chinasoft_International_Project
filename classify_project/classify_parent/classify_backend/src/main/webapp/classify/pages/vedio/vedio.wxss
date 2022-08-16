@@ -1,38 +1,34 @@
 /* pages/vedio/vedio.wxss */
 .picdiv{
   width: 80%;
+  height: 600rpx;
   border: 1px solid #424242;
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 0 auto 30px auto;
+  margin: 0 auto
 }
 .bottomdiv{
   height: 300px;
 }
 .Image{
-  width: 80%;
-  margin: 20px 0;
+  height: 99%;
+  width: 100%;
+  margin: 5rpx 0;
 }
 .Button{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 40rpx;
   }
-  .doublebutton{
-    width: 300px;
-    align-items: center;
-    margin: 0 70rpx;
-  }
   .rego {
-    /* display:inline-block;
-    flex-direction: column; */
     display: flex;
     align-items: center;
     justify-content: center;
     padding:0;
+    margin-top: 10px;
     width: 145px !important;
     height:50px !important;
     line-height:50px;

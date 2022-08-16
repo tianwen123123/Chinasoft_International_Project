@@ -5,14 +5,14 @@
     <view class="btn-area">
       <button type="primary" bindtap="takePhoto">拍照</button>
     </view>
-    <!-- <view class="btn-area">
+    <view class="btn-area">
       <button type="primary" bindtap="startRecord">开始录像</button>
     </view>
     <view class="btn-area">
       <button type="primary" bindtap="stopRecord">结束录像</button>
-    </view> -->
+    </view>
     <view class="btn-area">
-      <button type="primary" bindtap="star">发送帧</button>
+      <button type="primary" bindtap="start">发送帧</button>
     </view>
     <view class="btn-area">
       <button type="primary" bindtap="stop">结束帧</button>

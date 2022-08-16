@@ -1,27 +1,20 @@
 // pages/realtimemonitor/realtimemonitor.js
-
-// var flag = true
-// // const context = wx.createCameraContext()
-// const listener = wx.createCameraContext().onCameraFrame((frame) => {
-//   setInterval(function () {
-//     console.log(Array.prototype.slice.call(new Uint8Array(frame.data)), frame.width, frame.height)   
-// }, 500); 
-// })
 Page({
 
   data:{
-    // context = wx.createCameraContext()
   },
   onLoad() {
-    // this.ctx = wx.createCameraContext()
+    this.ctx = wx.createCameraContext()
+    this.listener =  this.ctx.onCameraFrame((frame) => {
+      console.log(Array.prototype.slice.call(new Uint8Array(frame.data)), frame.width, frame.height)   
+})
   },
-
-  open(){
-     console.log("开始监听")
-     listener.start()
+  start(){
+    console.log("开始监听")
+     this.listener.start()
   },
   stop(){
-      listener.stop()
+      this.listener.stop()
       console.log("停止监听")
   },
   takePhoto() {
