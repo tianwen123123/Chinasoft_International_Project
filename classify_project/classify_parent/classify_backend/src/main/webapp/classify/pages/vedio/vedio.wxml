@@ -1,16 +1,18 @@
-<!--pages/GarbageSorting/GarbageSorting.wxml-->
+<!--pages/vedio/vedio.wxml-->
 <view class="picdiv">
-<image src="{{Filepath}}" mode="aspectFit" class="Image" bindtap="PhotoRecognition"></image>
+<image wx:if="{{imgisshow}}" src="{{Filepath}}" mode="aspectFit" class="Image" bindtap="VedioRecognition"></image>
+<video wx:if="{{videoPath}}" class="video" src="{{videoPath}}"></video>
 </view>
 <view class="doublebutton">
-  <button class="rego" bindtap="PhotoRecognition">上传照片</button>
+  <button class="rego" bindtap="VedioRecognition">上传视频</button>
   <button class="rego" bindtap="Realtimerecogn)">实时检测</button>
 </view>
 
 <button type="primary" bindtap="regition" class="Button">识别</button>
 <view wx:if="{{isshow}}" class="resultdiv">
   <view class="resultimgdiv">
-    <image class="resultimg" src="{{resultimgpath}}" mode="aspectFit"></image>
+    <!-- <image class="resultimg" src="{{resultimgpath}}" mode="aspectFit"></image> -->
+    <video class="resultvedio" src="{{resultvediopath}}"></video>
   </view>
   <view class="resulttextinfo">
   <text>识别结果:
@@ -22,6 +24,4 @@
 <!-- <button type="primary" bindtap="PhotoRecognition" class="Button">选择照片</button> -->
 <!-- <button type="primary" bindtap="VedioRecognition" class="Button" >视频识别</button> -->
 <view class="bottomdiv"></view>
-
-
 

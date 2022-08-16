@@ -7,12 +7,29 @@
     "pages/registered/registered",
     "pages/result/result",
     "pages/studentinfo/studentinfo",
-    "pages/healthcode/healthcode"
+    "pages/healthcode/healthcode",
+    "pages/vedio/vedio"
   ],
+  "tabBar": {
+    "list": [
+        {
+            "pagePath": "pages/GarbageSorting/GarbageSorting",
+            "iconPath": "images/_pic.png",
+            "selectedIconPath": "images/_pic_select.png",
+            "text": "图片识别"
+        },
+        {
+            "pagePath": "pages/vedio/vedio",
+            "iconPath": "images/_video.png",
+            "selectedIconPath": "images/_video_select.png",
+            "text": "视频识别"
+        }
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "车牌识别",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

@@ -1,20 +1,21 @@
 <!--pages/login/login.wxml-->
 <view class="page-body">
   <view class="page-section">
-
     <view class="input-container">
-      <image src="../../images/people.png"></image>
+      <view class="imgdiv" style="opacity:{{1}}"><image src="../../images/_people.png"></image></view>
       <input placeholder="手机号" placeholder-class="input-text" value="{{telephone}}" bindinput="inputTelephone"/>
     </view>
 
     <view class="input-container">
-      <image src="../../images/lock.png"></image>
+      <image src="../../images/_lock.png"></image>
       <input password="true" placeholder="密码" placeholder-class="input-text" value="{{password}}" bindinput="inputPassword"/>
     </view>
-
+    <view class="operation">
+    <button bindtap="login" class="login" >登录</button>
   </view>
   <view class="operation">
-    <button type="primary" bindtap="login" class="login" >登录</button>
-    <button type="default" bindtap="registered" size="mini" class="registered">注册</button>
+    <button bindtap="registered" size="mini" class="registered">注册</button>
+  </view>
   </view>
 </view>
+

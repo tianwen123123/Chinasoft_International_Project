@@ -1,4 +1,4 @@
-/* pages/GarbageSorting/GarbageSorting.wxss */
+/* pages/vedio/vedio.wxss */
 .picdiv{
   width: 80%;
   border: 1px solid #424242;
@@ -44,7 +44,7 @@
   width: 80%;
   margin: 0 auto;
 }
-.resultimg{
+.resultvedio{
     margin: 0;
 }
 .resulttextinfo{

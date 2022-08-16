@@ -59,7 +59,9 @@ Page({
       },
     })
   },
+  Realtimerecogn(){
 
+  },
   regition(){
     var that = this
     if(that.data.Filepath=="../../images/_plus.png"){
@@ -78,10 +80,9 @@ Page({
       title: '识别中',
       mask: true,
     })
-    wx.uploadFile({
-      url: 'http://localhost:8081/picture?telephone'+that.data.telephone,
-      filePath: that.data.Filepath,
-      name: 'imgFile',
+    wx.request({
+      url: 'url',
+      method:'',
       success: (res) => {
         var message = res.message
         console.log(res)
@@ -110,43 +111,7 @@ Page({
         setTimeout(function () {
           wx.hideLoading()
         }, 2000)
-        
-        // wx.navigateTo({
-        //   url: '../result/result?Filepath='+that.data.Filepath,
-        // })
       },
     })
   },
-
-
-  VedioRecognition(){
-    var that = this
-    wx.chooseMedia({
-      camera: 'back',
-      count: 1,
-      mediaType: ['video'],
-      sourceType: ['album', 'camera'],
-      success(res) {
-        that.setData({
-          Filepath:res.tempFiles[0].tempFilePath
-        })
-        console.log(res.tempFiles[0].tempFilePath)
-        wx.uploadFile({
-          filePath: that.data.Filepath,
-          name: 'vediofile',
-          url: '',
-          success: (result) => {
-            wx.navigateTo({
-              url: '../result/result?Filepath='+that.data.Filepath,
-            })
-          },
-          fail: (res) => {},
-          complete: (res) => {},
-        })
-      },
-      fail: (res) => {},
-      complete: (res) => {},
-    })
-  }
-
 })
