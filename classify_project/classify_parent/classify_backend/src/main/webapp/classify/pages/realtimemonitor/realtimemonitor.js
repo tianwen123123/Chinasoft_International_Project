@@ -5,8 +5,13 @@ Page({
   },
   onLoad() {
     this.ctx = wx.createCameraContext()
+    var count=0
     this.listener =  this.ctx.onCameraFrame((frame) => {
-      console.log(Array.prototype.slice.call(new Uint8Array(frame.data)), frame.width, frame.height)   
+      count+=1
+      if(count==30){
+        console.log(Array.prototype.slice.call(new Uint8Array(frame.data)), frame.width, frame.height)  
+        count=0 
+      }
 })
   },
   start(){
