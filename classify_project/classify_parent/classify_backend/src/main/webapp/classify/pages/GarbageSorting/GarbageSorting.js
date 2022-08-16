@@ -16,7 +16,6 @@ Page({
 
   },
   onShow() {
-
   },
   PhotoRecognition(){
     var that = this
@@ -37,7 +36,7 @@ Page({
       complete: (res) => {},
     })
     wx.uploadFile({
-      url: 'http://localhost:8081/picture?telephone'+that.data.telephone,
+      url: getApp().globalData.webUrl+'/picture?telephone'+that.data.telephone,
       filePath: that.data.Filepath,
       name: 'imgFile',
       success:(res)=>{

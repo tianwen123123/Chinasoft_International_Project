@@ -1,20 +1,16 @@
 // pages/login/login.js
 Page({
 	data: {
-		telephone: null,
-		password: null
+		telephone: '',
+		password:'',
 	},
-	onLoad: function (options) {
-      this.setData({
-		  telephone : wx.getStorageSync('telephone'),
+	onLoad: function () {
+  },
+  onShow(){
+    this.setData({
+      telephone : wx.getStorageSync('telephone'),
       password : wx.getStorageSync('password'),
     })
-    if(!(options == null || options == '')){
-      this.setData({
-        telephone:options.telephone,
-        password:options.password,
-      })
-    }
   },
 	inputTelephone: function (e) {
     let phone = e.detail.value
@@ -45,15 +41,16 @@ Page({
     })
   },
 	login: function () {
+    var that = this
     var par = /^((13[0-9])|(14[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/
-		if (this.data.telephone==null||this.data.password==null||this.data.telephone==''||this.data.password=='') {
+		if (that.data.telephone==null||that.data.password==null||that.data.telephone==''||that.data.password=='') {
 			wx.showToast({
 				title: '输入不能为空',
 				icon: 'error',
 				duration: 1000
 			});
     }
-    else if(!(par.test(this.data.telephone)) || this.data.telephone.length != 11){
+    else if(!(par.test(that.data.telephone)) || that.data.telephone.length != 11){
       wx.showToast({
 				title: '手机号格式有误',
 				icon: 'error',
@@ -72,11 +69,11 @@ Page({
 
       
 			wx.request({
-				url: "http://localhost:8081/user",
+				url: getApp().globalData.webUrl+'/user',
 				method: "post",
 				data: {
-					telephone: this.data.telephone,
-					password: this.data.password,
+					telephone: that.data.telephone,
+					password: that.data.password,
 					method: "login"
 				},
 				header: { 
@@ -92,9 +89,9 @@ Page({
 							icon: 'success',
 							duration: 1000
 						});
-						wx.setStorageSync('telephone',this.data.telephone);
-						wx.setStorageSync('password',this.data.password);
-						var phone = this.data.telephone
+						wx.setStorageSync('telephone',that.data.telephone);
+						wx.setStorageSync('password',that.data.password);
+						var phone = that.data.telephone
 						setTimeout(function(){
 						wx.switchTab({
 							url: '../GarbageSorting/GarbageSorting?telephone='+phone,

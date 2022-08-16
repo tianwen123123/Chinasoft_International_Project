@@ -117,7 +117,7 @@ Page({
           n--;
         }, 1000);
           wx.request({
-            url: 'http://localhost:8081/user?telephone='+this.data.telephone,
+            url: getApp().globalData.webUrl+'/user?telephone='+this.data.telephone,
             method:'GET',
             success(res){
               console.log(res)
@@ -160,7 +160,7 @@ Page({
     if(this.isPasswordSame()){
       console.log("注册")
     wx.request({
-      url: 'http://localhost:8081/user',
+      url: getApp().globalData.webUrl+'/user',
       method:'PUT',
       data:{
         'telephone':telephone,
@@ -172,6 +172,8 @@ Page({
         let message = res.data.message
         console.log(res)
         if(res.data.flag==true){
+          wx.setStorageSync('telephone',telephone);
+          wx.setStorageSync('password',Password);
           wx.showToast({
             title: message,
             icon:'success',
@@ -179,7 +181,7 @@ Page({
           })
           setTimeout(function(){
             wx.navigateTo({
-              url: '../login/login?telephone='+telephone+"&password="+Password,
+              url: '../login/login'
             })
           },500)
         }else{
