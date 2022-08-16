@@ -1,14 +1,23 @@
 /* pages/login/login.wxss */
-/* page{
-  background-image: url(../../images/_background.png);
+page{
+  background-image: url(https://s3.328888.xyz/2022/08/16/hMovi.png);
   background-size: 100% 100%;
-} */
-
+}
+.bigtext{
+  height: 270rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bigtext text{
+  font-size: 50px;
+  color: aliceblue;
+}
 .page-section{
-  padding-top: 270rpx;
   margin: 200rpx 30px;
-  background-color:#8d3a74;
-  border-radius: 10px;
+  /* background: rgba(141, 58, 116, 0.7); */
+  background: rgba(30, 28, 116, 0.7);
+  border-radius: 50rpx;
 }
 .input-container {
   margin: 20rpx auto;
@@ -23,16 +32,19 @@
   background-color: #f81111;
 }
 .input-text {
-  text-align: left;
-  margin-left: 10px;
+  position:absolute;
+  left: 20rpx;
+  /* text-align: left;
+  margin-left: 10px; */
 }
 .input-container input{
   border: 0;
   float: right;
-  width:84%;
+  width:82%;
   height:100rpx;
-  font-size:40rpx;
-  margin-top: auto;
+  font-size:35rpx;
+  /* margin-top: auto; */
+  margin-left: 10rpx;
   background-color:white;
   border-top-right-radius: 30rpx;
   border-bottom-right-radius: 30rpx;

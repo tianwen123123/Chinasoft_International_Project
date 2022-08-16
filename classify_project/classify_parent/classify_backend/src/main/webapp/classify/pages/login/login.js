@@ -104,7 +104,14 @@ Page({
 							duration: 1000
 						});
 					}
-				}
+        },
+        fail:(res)=>{
+          wx.showToast({
+            title: '登陆失败',
+            icon:'error',
+            duration:500
+          })
+        }
 			})	
 		}
 	}

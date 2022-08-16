@@ -1,6 +1,7 @@
 <!--pages/login/login.wxml-->
 <view class="page-body">
   <view class="page-section">
+  <view class="bigtext"><text>登录</text></view>
     <view class="input-container">
       <view class="imgdiv" style="opacity:{{1}}"><image src="../../images/_people.png"></image></view>
       <input placeholder="手机号" placeholder-class="input-text" value="{{telephone}}" bindinput="inputTelephone"/>
