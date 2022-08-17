@@ -18,10 +18,10 @@ page {
 }
 
 .btn-area {
-  margin-top: 60rpx;
+  margin-top: 40rpx;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 30rpx;
+  padding: 0 10rpx;
 }
 .preview-tips {
   margin: 20rpx 0;  
@@ -31,4 +31,15 @@ page {
   margin: 50px auto;
   width: 100%;
   height: 300px;
+}
+.buttondiv{
+
+}
+.btn_left{
+  width: 50%;
+  float: left;
+}
+.btn_right{
+  width:50%;
+  float: left;
 }

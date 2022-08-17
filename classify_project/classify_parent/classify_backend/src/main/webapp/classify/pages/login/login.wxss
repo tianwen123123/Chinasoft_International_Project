@@ -15,7 +15,6 @@ page{
 }
 .page-section{
   margin: 200rpx 30px;
-  /* background: rgba(141, 58, 116, 0.7); */
   background: rgba(30, 28, 116, 0.7);
   border-radius: 50rpx;
 }
@@ -28,14 +27,9 @@ page{
   padding-left: 20rpx;
   background-color: #deb1c7;
 }
-.imgdiv{
-  background-color: #f81111;
-}
 .input-text {
   position:absolute;
   left: 20rpx;
-  /* text-align: left;
-  margin-left: 10px; */
 }
 .input-container input{
   border: 0;
@@ -43,7 +37,6 @@ page{
   width:82%;
   height:100rpx;
   font-size:35rpx;
-  /* margin-top: auto; */
   margin-left: 10rpx;
   background-color:white;
   border-top-right-radius: 30rpx;
@@ -58,18 +51,9 @@ page{
   margin-right: 20rpx;
 }
 .operation{
-  height: 150rpx;
-  width: 80%;
+  height: 250rpx;
   margin: auto;
 }
-/* .login{
-  margin-top: 10px;
-  padding-top: 20rpx;
-  font-size:40rpx;
-  display: inline-block;
-  position: relative;
-  left: 60rpx;
-} */
   .login {
     margin-top: 30px;
     padding:0;
@@ -77,11 +61,16 @@ page{
     height:50px !important;
     line-height:50px;
     border-radius: 40px;
+    align-items: center;
   }
 .registered{
-  margin-top: -10px;
-  position:relative;
-  left: 190rpx;
+  margin-top: 10px;
+  padding:0;
+  width: 50px !important;
+  height:30px !important;
+  line-height:30px;
+  border-radius: 5px;
+  align-items: center;
   color: white;
-  background-color: #8d3a74;
+  background-color: #deb1c7;
 }

@@ -2,32 +2,77 @@
 Page({
 
   data:{
+    imageArray:{},
+    left:0,
+    top:0,
+    rectangleshow:false,
   },
   onLoad() {
-    this.ctx = wx.createCameraContext()
+    var that = this
+    that.ctx = wx.createCameraContext()
     var count=0
-    this.listener =  this.ctx.onCameraFrame((frame) => {
+    that.listener =  that.ctx.onCameraFrame((frame) => {
       count+=1
       if(count==30){
-        console.log(Array.prototype.slice.call(new Uint8Array(frame.data)), frame.width, frame.height)  
+        var array = Array.prototype.slice.call(new Uint8Array(frame.data))
+        // console.log(Array.prototype.slice.call(new Uint8Array(frame.data)), frame.width, frame.height)
+        that.setData({
+          imageArray:array
+        })  
         count=0 
       }
 })
+},
+  onShow(){
+    var that = this
+    that.setData({
+      imageArray:{},
+    })
+  },
+  requestimg(){
+    var that = this
+    console.log(that.data.imageArray)
+      that.setData({
+        left: (that.data.left+10)<=280?(that.data.left+10):10,
+        top: (that.data.top+10)<=330?(that.data.top+10):10,
+      })
+      console.log(that.data.left)
+    // wx.request({
+    //   url: '',
+    //   method:'',
+    //   success: (result) => {},
+    //   fail: (res) => {},
+    //   complete: (res) => {},
+    // })
+    that.setData({
+      rectangleshow:true
+    })
   },
   start(){
+    var that = this
     console.log("开始监听")
-     this.listener.start()
+    that.listener.start()
+    setTimeout(() => {
+      that.requestarray =  setInterval(this.requestimg, 500);
+    }, 1000);
   },
   stop(){
-      this.listener.stop()
+    var that = this
+      that.listener.stop()
       console.log("停止监听")
+      clearInterval(that.requestarray)
+      that.setData({
+        rectangleshow:false
+      })
   },
+
   takePhoto() {
     this.ctx.takePhoto({
       quality: 'high',
       success: (res) => {
         this.setData({
-          src: res.tempImagePath
+          src: res.tempImagePath,
+          videoSrc:'',
         })
       }
     })
@@ -43,7 +88,8 @@ Page({
     this.ctx.stopRecord({
       success: (res) => {
         this.setData({
-          src: res.tempThumbPath,
+          // src: res.tempThumbPath,
+          src:'',
           videoSrc: res.tempVideoPath
         })
       }

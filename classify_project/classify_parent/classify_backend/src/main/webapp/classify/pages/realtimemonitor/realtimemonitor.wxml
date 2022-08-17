@@ -1,10 +1,16 @@
 <!--pages/realtimemonitor/realtimemonitor.wxml-->
 <view class="page-body">
   <view class="page-body-wrapper">
-    <camera device-position="back" flash="off" binderror="error" frame-size="small" style="width: 100%; height: 300px;"></camera>
-    <view class="btn-area">
-      <button type="primary" bindtap="takePhoto">拍照</button>
-    </view>
+    <camera device-position="back" flash="off" binderror="error" frame-size="small" style="width: 100%; height: 400px;">
+        <cover-view style="color: aquamarine; width: 100%;height: 400px;">
+          12321424
+          <cover-image wx:if="{{rectangleshow}}" src="../../images/_rectangle.png"
+          style="width: 120px; height: 50px;  position: relative;left:{{left}}px;top:{{top}}px"></cover-image>
+        </cover-view>
+    </camera>
+
+    <view class="buttondiv">
+    <view class="btn_left">
     <view class="btn-area">
       <button type="primary" bindtap="startRecord">开始录像</button>
     </view>
@@ -12,11 +18,21 @@
       <button type="primary" bindtap="stopRecord">结束录像</button>
     </view>
     <view class="btn-area">
-      <button type="primary" bindtap="start">发送帧</button>
+      <button type="primary" bindtap="takePhoto">拍照</button>
+    </view>
+    </view>
+    <view class="btn_right">
+      <view class="btn-area">
+      <button type="primary" bindtap="start">实时识别</button>
     </view>
     <view class="btn-area">
-      <button type="primary" bindtap="stop">结束帧</button>
+      <button type="primary" bindtap="stop">识别结束</button>
     </view>
+    </view>
+    </view>
+
+
+
     <view class="preview-tips">预览</view>
     <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
     <video wx:if="{{videoSrc}}" class="video" src="{{videoSrc}}"></video>

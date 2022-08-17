@@ -3,7 +3,7 @@
   <view class="page-section">
   <view class="bigtext"><text>登录</text></view>
     <view class="input-container">
-      <view class="imgdiv" style="opacity:{{1}}"><image src="../../images/_people.png"></image></view>
+      <image src="../../images/_people.png"></image>
       <input placeholder="手机号" placeholder-class="input-text" value="{{telephone}}" bindinput="inputTelephone"/>
     </view>
 
@@ -13,10 +13,8 @@
     </view>
     <view class="operation">
     <button bindtap="login" class="login" >登录</button>
-  </view>
-  <view class="operation">
-    <button bindtap="registered" size="mini" class="registered">注册</button>
-  </view>
+    <button bindtap="registered" class="registered">注册</button>
+    </view>
   </view>
 </view>
 
