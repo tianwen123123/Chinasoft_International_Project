@@ -1,21 +1,17 @@
-<!--pages/login/login.wxml-->
-<view class="page-body">
-  <view class="page-section">
-  <view class="bigtext"><text>登录</text></view>
-    <view class="input-container">
-      <image src="../../images/_people.png"></image>
-      <input placeholder="手机号" placeholder-class="input-text" value="{{telephone}}" bindinput="inputTelephone"/>
-    </view>
 
-    <view class="input-container">
-      <image src="../../images/_lock.png"></image>
-      <input password="true" placeholder="密码" placeholder-class="input-text" value="{{password}}" bindinput="inputPassword"/>
+<view class="container">
+    <view class="login-wrapper">
+        <view class="header">
+          <image style="height: 130px; width: 260px;" src="../../images/Login.png"></image>
+        </view>
+        <view class="form-wrapper">
+            <input type="text" name="telephone" placeholder="telephone" value="{{telephone}}" class="input-item" bindinput="inputTelephone"/>
+            <input type="password" name="password" placeholder="password" value="{{password}}" class="input-item" bindinput="inputPassword"/>
+            <view class="btn" bindtap="login">Login</view>
+        </view>
+        <view class="msg">
+            Don't have account?
+            <a  bindtap="registered">Sign up</a>
+        </view>
     </view>
-    <view class="operation">
-    <button bindtap="login" class="login" >登录</button>
-    <!-- <button bindtap="registered" class="registered">注册</button> -->
-    <text bindtap="registered" class="registered">注册</text>
-    </view>
-  </view>
 </view>
-

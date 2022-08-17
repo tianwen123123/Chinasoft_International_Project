@@ -2,7 +2,7 @@
 <view class="picdiv">
 <image src="{{Filepath}}" mode="aspectFit" class="Image" bindtap="PhotoRecognition"></image>
 </view>
-<button class="rego" bindtap="PhotoRecognition">上传照片</button>
+<!-- <button class="rego" bindtap="PhotoRecognition">上传照片</button> -->
 <button type="primary" bindtap="regition" class="Button">识别</button>
 <view wx:if="{{isshow}}" class="resultdiv">
   <view class="resultimgdiv">

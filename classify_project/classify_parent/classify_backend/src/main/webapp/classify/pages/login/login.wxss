@@ -1,77 +1,55 @@
-/* pages/login/login.wxss */
 page{
-  background-image: url(https://s3.328888.xyz/2022/08/16/hMovi.png);
-  background-size: 100% 100%;
+  height: 100%;
 }
-.bigtext{
-  height: 270rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
 }
-.bigtext text{
-  font-size: 50px;
-  color: aliceblue;
+.login-wrapper {
+  background-color: #fff;
+  width: 80%;
+  height: 70%;
+  border-radius: 15px;
+  padding: 0 20px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-.page-section{
-  margin: 200rpx 30px;
-  background: rgba(30, 28, 116, 0.7);
-  border-radius: 50rpx;
+.header {
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  /* line-height: 200px; */
+  font-family: Serif
 }
-.input-container {
-  margin: 20rpx auto;
-  border-radius: 30rpx;
-  width: 550rpx;
-  height: 100rpx;
-  border: rgb(143, 143, 143) 1px solid;
-  padding-left: 20rpx;
-  background-color: #deb1c7;
-}
-.input-text {
-  position:absolute;
-  left: 20rpx;
-}
-.input-container input{
+.input-item {
+  display: block;
+  width: 90%;
+  margin-bottom: 20px;
   border: 0;
-  float: right;
-  width:82%;
-  height:100rpx;
-  font-size:35rpx;
-  margin-left: 10rpx;
-  background-color:white;
-  border-top-right-radius: 30rpx;
-  border-bottom-right-radius: 30rpx;
+  padding: 10px;
+  border-bottom: 1px solid rgb(128, 125, 125);
+  font-size: 15px;
+  outline: none;
 }
-
-.input-container image {
-  float: left;
-  width: 60rpx;
-  height: 60rpx;
-  margin-top: 20rpx;
-  margin-right: 20rpx;
+.input-item:placeholder {
+  text-transform: uppercase;
 }
-.operation{
-  height: 250rpx;
-  margin: auto;
+.btn {
+  text-align: center;
+  padding: 10px;
+  width: 90%;
+  margin-top: 40px;
+  background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+  color: #fff;
 }
-  .login {
-    margin-top: 30px;
-    padding:0;
-    width: 250px !important;
-    height:50px !important;
-    line-height:50px;
-    border-radius: 40px;
-    align-items: center;
-  }
-.registered{
-  margin-top: 10px;
-  padding:0;
-  width: 50px !important;
-  height:30px !important;
-  line-height:30px;
-  border-radius: 5px;
-  align-items: center;
-  color: white;
-  float: right;
-  /* background-color: #deb1c7; */
+.msg {
+  text-align: center;
+  line-height: 88px;
+}
+a{
+  text-decoration-line: none;
+  color: #abc1ee;
 }
