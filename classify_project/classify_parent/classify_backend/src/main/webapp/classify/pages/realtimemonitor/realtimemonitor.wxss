@@ -38,6 +38,12 @@ page {
 .buttondiv{
 
 }
+.covertext{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
 .btn_left{
   width: 50%;
   float: left;

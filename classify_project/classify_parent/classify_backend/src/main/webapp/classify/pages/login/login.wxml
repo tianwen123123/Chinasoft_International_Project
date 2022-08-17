@@ -13,7 +13,8 @@
     </view>
     <view class="operation">
     <button bindtap="login" class="login" >登录</button>
-    <button bindtap="registered" class="registered">注册</button>
+    <!-- <button bindtap="registered" class="registered">注册</button> -->
+    <text bindtap="registered" class="registered">注册</text>
     </view>
   </view>
 </view>
