@@ -8,7 +8,8 @@
     "pages/result/result",
     "pages/studentinfo/studentinfo",
     "pages/healthcode/healthcode",
-    "pages/vedio/vedio"
+    "pages/vedio/vedio",
+    "pages/realtimemonitor/realtimemonitor"
   ],
   "tabBar": {
     "list": [
@@ -23,7 +24,13 @@
             "iconPath": "images/_video.png",
             "selectedIconPath": "images/_video_select.png",
             "text": "视频识别"
-        }
+        },
+        {
+          "pagePath": "pages/realtimemonitor/realtimemonitor",
+          "iconPath": "images/_camera.png",
+          "selectedIconPath": "images/_camera_select.png",
+          "text": "实时监测"
+      }
     ]
   },
   "window":{

@@ -62,12 +62,7 @@ Page({
 				title: '登录中',
 				icon: 'loading',
 				duration: 1000
-			});
-      // wx.switchTab({
-      //   url: '../GarbageSorting/GarbageSorting',
-      // })
-
-      
+			});  
 			wx.request({
 				url: getApp().globalData.webUrl+'/user',
 				method: "post",
@@ -93,7 +88,7 @@ Page({
 						wx.setStorageSync('password',that.data.password);
 						var phone = that.data.telephone
 						setTimeout(function(){
-						wx.switchTab({
+						wx.reLaunch({
 							url: '../GarbageSorting/GarbageSorting?telephone='+phone,
 							success: function (res) {}
 						})},500)
