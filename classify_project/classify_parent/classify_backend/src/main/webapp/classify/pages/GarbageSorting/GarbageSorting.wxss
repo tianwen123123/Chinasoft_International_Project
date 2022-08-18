@@ -54,3 +54,28 @@
 .resulttextinfo text{
   font-size: 50rpx;
 }
+.telephone-box {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1rpx solid #acacac;
+  border-bottom: 1rpx solid #acacac;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+
+}
+.number {
+  color: #333;
+  font-size: 40rpx;
+  float: right;
+  height: 100rpx;
+  width: 55%;
+}
+.telephone {
+  float: left;
+  color: #333;
+  font-size: 40rpx;
+  width: 40%;
+}

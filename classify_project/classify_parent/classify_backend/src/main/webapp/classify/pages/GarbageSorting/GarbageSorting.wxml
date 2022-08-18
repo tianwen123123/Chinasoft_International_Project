@@ -8,11 +8,15 @@
   <view class="resultimgdiv">
     <image class="resultimg" src="{{resultimgpath}}" mode="aspectFit"></image>
   </view>
-  <view class="resulttextinfo">
+  <!-- <view class="resulttextinfo">
   <text>识别结果:
   </text>
   {{resultText}}
-  </view>
+  </view> -->
+  <view class='telephone-box'>
+      <text class='telephone'>识别结果</text>
+      <input type="text" value="{{resultText}}" class='number'/>
+    </view>
 </view>
 <view class="bottomdiv"></view>
 

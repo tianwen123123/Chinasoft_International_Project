@@ -3,7 +3,7 @@ Page({
   data: {
       Filepath:"../../images/_plus.png",
       resultimgpath:"../../images/_plus.png",
-      resultText:"信息",
+      resultText:'',
       isshow:false,
       telephone:'',
   },
