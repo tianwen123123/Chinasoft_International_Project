@@ -14,7 +14,7 @@ App({
     })
   },
   globalData: {
-    webUrl:"http://192.168.76.238:8081",
+    webUrl:"http://localhost:8081",
     userInfo: null
   }
 })

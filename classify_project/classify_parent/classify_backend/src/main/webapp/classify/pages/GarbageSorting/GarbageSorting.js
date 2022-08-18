@@ -102,7 +102,8 @@ Page({
             duration:1000
           })
           that.setData({
-            resultimgpath: "http://rgbvrgbry.hb-bkt.clouddn.com/"+res.data.data,
+            resultimgpath: "http://rgbvrgbry.hb-bkt.clouddn.com/"+res.data.data[0],
+            resultText:res.data.data[1],
             isshow:true
           })
         }else{
