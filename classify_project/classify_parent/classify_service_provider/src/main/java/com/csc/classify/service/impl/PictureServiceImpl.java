@@ -13,7 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-@Service(interfaceClass = PictureService.class)
+import java.util.ArrayList;
+
+@Service(interfaceClass = PictureService.class,timeout = 30000,retries = 0)
 @Transactional
 public class PictureServiceImpl implements PictureService {
 
@@ -29,6 +31,8 @@ public class PictureServiceImpl implements PictureService {
      */
     public Result classify(String picName) {
         String classify = null;
+        String license = null;
+        ArrayList<String> ret = new ArrayList<String>();
         try {
             //请求的url
             String url = "http://127.0.0.1:5000?pic=" + picName;
@@ -41,11 +45,15 @@ public class PictureServiceImpl implements PictureService {
 
             JSONObject jsonObject = JSON.parseObject(body);
             classify = jsonObject.getString("classify_pic");
+            license=jsonObject.getString("license");
             System.out.println(classify);
+            System.out.println(license);
+            ret.add(classify);
+            ret.add(license);
         } catch (RestClientException e) {
             e.printStackTrace();
             return new Result(false,MessageConstant.CLASSIFY_FAIL);
         }
-        return new Result(true, MessageConstant.CLASSIFY_SUCCESS,classify);
+        return new Result(true, MessageConstant.CLASSIFY_SUCCESS,ret);
     }
 }

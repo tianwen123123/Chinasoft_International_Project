@@ -7,6 +7,8 @@ dubbo:
     id: classify_backend
   registry:
     address: zookeeper://192.168.23.135:2181
+  consumer:
+    timeout: 30000
 
 
 # 关闭Redis健康监测

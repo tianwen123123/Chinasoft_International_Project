@@ -19,6 +19,8 @@ dubbo:
     port: 20880
   scan:
     base-packages: com.csc.classify.service
+  provider:
+    timeout: 30000
 
 # 关闭Redis健康监测
 management:
