@@ -32,7 +32,7 @@ def upload(pic_name, img):
         raise Exception("upload failed")
 
     # 删除本地缓存图
-    del_local(pic_name)
+    del_local(localfile)
     return ret, info
 
 
@@ -41,9 +41,9 @@ def save_local(pic_name, file):  # 把图片暂存到本地
     img.save(pic_name)
 
 
-def del_local(pic_name):  # 把本地暂存的图片删除
-    for maindir, a, file_name_list in os.walk(path):
-        os.remove(maindir + "\\" + pic_name)
+def del_local(localfile):  # 把本地暂存的图片删除
+    print(localfile)
+    os.remove(localfile)
 
 
 if __name__ == '__main__':

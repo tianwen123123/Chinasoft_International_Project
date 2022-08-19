@@ -5,9 +5,10 @@ from keras.layers import Input, Add, Dense, Activation, ZeroPadding2D, BatchNorm
     AveragePooling2D, MaxPooling2D
 from keras.models import Model
 from keras.initializers import glorot_uniform
+import cv2 as cv
 
 AUTOTUNE = tf.data.experimental.AUTOTUNE
-model_path = 'model/license_model_chs_eng.h5'
+model_path = 'model/license_model_chs.h5'
 root_dir = os.getcwd() + os.sep + "datasets/chs_train"
 root_dir_path = pathlib.Path(root_dir)
 all_image_filename=[str(jpg_path) for jpg_path in root_dir_path.glob('**/*.jpg')]
@@ -27,7 +28,9 @@ def get_image(filename, label):
     image_jpg = tf.image.decode_jpeg(image_data)
     image_resized = tf.image.resize(image_jpg, [32, 32])
     image_scale = image_resized / 32.0
-    return image_scale, label
+    gray_image = cv.cvtColor(image_scale, cv.COLOR_BGR2GRAY)
+    ret, binary_image = cv.threshold(gray_image, 0, 255, cv.THRESH_OTSU)
+    return binary_image, label
 
 
 tf_train_feature_filenames = tf.constant(all_image_filename)
@@ -115,7 +118,7 @@ def identify_block(X, f, filters, stage, block):
     return X
 
 
-def ResNet50(input_shape=(32, 32, 1), classes=30):
+def ResNet50(input_shape=(32, 32, 1), classes=31):
     """
     CONV2D -> BATCHNORM -> RELU -> MAXPOOL -> CONVBLOCK -> IDBLOCK*2 -> CONVBLOCK -> IDBLOCK*3
     -> CONVBLOCK -> IDBLOCK*5 -> CONVBLOCK -> IDBLOCK*2 -> AVGPOOL -> TOPLAYER
@@ -170,7 +173,7 @@ def ResNet50(input_shape=(32, 32, 1), classes=30):
     return model
 
 
-model = ResNet50(input_shape=(32, 32, 1), classes=30)
+model = ResNet50(input_shape=(32, 32, 1), classes=31)
 
 model.compile(
     optimizer=tf.keras.optimizers.Adam(lr=learning_rate, beta_1=0.9, beta_2=0.99, epsilon=1e-08, decay=0.0),

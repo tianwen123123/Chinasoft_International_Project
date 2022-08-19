@@ -27,7 +27,7 @@ public class VideoController {
     private VideoService videoService;
 
     @PostMapping("/video")
-    public Result upload(@RequestParam("videoFile") MultipartFile videoFile) {
+    public Result upload(@RequestParam("videoFile") MultipartFile videoFile, @RequestParam("telephone") String telephone) {
         if (videoFile == null)
             return new Result(false, MessageConstant.VIDEO_NOT_NULL);
 
@@ -52,32 +52,29 @@ public class VideoController {
         }
 
         //向redis中添加视频名称
-        //Todo:动态获取手机号
         Jedis jedis = redisUtils.getJedis();
-        jedis.setex("18202275875/"+"video", 60 * 5, fileName);
+        jedis.setex(telephone + "/video", 60 * 5, fileName);
         jedis.close();
 
         return new Result(true, MessageConstant.VIDEO_UPLOAD_SUCCESS, fileName);
     }
 
     @GetMapping("/video")
-    public Result process(@RequestParam("telephone") String telephon){
+    public Result process(@RequestParam("telephone") String telephone) {
         Jedis jedis = redisUtils.getJedis();
-        //Todo:动态电话号码
-        //jedis.get(telephone)
-        String value = jedis.get("18202275875/video");
+        String value = jedis.get(telephone + "/video");
+        Result result = null;
         if (value == null) {
             return new Result(false, MessageConstant.VIDEO_TIMEOUT);
         } else {
             try {
-                videoService.process(value);
+                result = videoService.process(value);
             } catch (Exception e) {
                 e.printStackTrace();
                 return new Result(false, MessageConstant.PROCESS_FAIL);
             }
         }
 
-        //todo:换构造，还要返回classify结果
-        return new Result(true,MessageConstant.PROCESS_SUCCESS);
+        return result;
     }
 }
