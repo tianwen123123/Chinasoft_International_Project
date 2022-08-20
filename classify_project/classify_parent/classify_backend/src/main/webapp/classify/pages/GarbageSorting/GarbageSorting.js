@@ -6,6 +6,7 @@ Page({
       resultText:'',
       isshow:false,
       telephone:'',
+      resultinfo:[],
   },
   onLoad(options) {
       this.setData({
@@ -101,9 +102,20 @@ Page({
             icon:'none',
             duration:1000
           })
+          var result = [];
+          var index = res.data.data[2];
+          for(var i=0; i<=index;i++)
+          {
+            var turle ={
+              path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + index + "_" +res.data.data[i],
+              text:res.data.data[1][idnex]
+            }
+            result.push(turle)
+          }
           that.setData({
-            resultimgpath: "http://rgbvrgbry.hb-bkt.clouddn.com/"+res.data.data[2]+"_"+res.data.data[0],
-            resultText:res.data.data[1][res.data.data[2]],
+          //   resultimgpath: "http://rgbvrgbry.hb-bkt.clouddn.com/"+res.data.data[2]+"_"+res.data.data[0],
+          //   resultText:res.data.data[1][res.data.data[2]],
+            resultinfo:result,
             isshow:true
           })
         }else{
@@ -113,6 +125,7 @@ Page({
             duration:1000
           })
         }
+        console.log("结果数组"+that.data.resultinfo)
       },
       fail: (res) => {},
       complete: (res) => {

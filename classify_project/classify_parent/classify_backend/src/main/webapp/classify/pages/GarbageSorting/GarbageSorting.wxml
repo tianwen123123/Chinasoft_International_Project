@@ -4,18 +4,13 @@
 </view>
 <!-- <button class="rego" bindtap="PhotoRecognition">上传照片</button> -->
 <button type="primary" bindtap="regition" class="Button">识别</button>
-<view wx:if="{{isshow}}" class="resultdiv">
+<view wx:if="{{isshow}}" wx:for="{{resultinfo}}" wx:key="this" class="resultdiv">
   <view class="resultimgdiv">
-    <image class="resultimg" src="{{resultimgpath}}" mode="aspectFit"></image>
+    <image class="resultimg" src="{{item.path}}" mode="aspectFit"></image>
   </view>
-  <!-- <view class="resulttextinfo">
-  <text>识别结果:
-  </text>
-  {{resultText}}
-  </view> -->
   <view class='telephone-box'>
       <text class='telephone'>识别结果</text>
-      <input type="text" value="{{resultText}}" class='number'/>
+      <input type="text" value="{{item.text}}" class='number'/>
     </view>
 </view>
 <view class="bottomdiv"></view>
