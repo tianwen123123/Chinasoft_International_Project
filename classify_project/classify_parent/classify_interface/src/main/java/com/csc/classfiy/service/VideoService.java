@@ -1,5 +1,7 @@
 package com.csc.classfiy.service;
 
+import com.csc.classify.result.Result;
+
 public interface VideoService {
-    public void process(String value);
+    public Result process(String value);
 }

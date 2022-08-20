@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class MessageConstant implements Serializable {
 
+
+
     //私有构造
     private MessageConstant() {
     }
@@ -33,4 +35,5 @@ public class MessageConstant implements Serializable {
     public static final String VIDEO_TIMEOUT = "视频超时";
     public static final String PROCESS_FAIL = "视频处理失败";
     public static final String PROCESS_SUCCESS = "视频处理成功";
+    public static final String NOT_FIND_LICENSE = "未检测到车牌";
 }

@@ -23,8 +23,8 @@ public class ServiceProviderApplication {
     @Bean
     public ClientHttpRequestFactory simpleClientHttpRequestFactory() {
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
-        factory.setReadTimeout(15000);
-        factory.setConnectTimeout(15000);
+        factory.setReadTimeout(120000);
+        factory.setConnectTimeout(120000);
         // 设置代理
         //factory.setProxy(null);
         return factory;
