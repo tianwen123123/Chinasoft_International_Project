@@ -29,7 +29,7 @@ page{
   margin-top: 20px;
   border-radius: 40rpx;
   /* background-color: rgb(42, 230, 255) !important;*/
-    background-image:linear-gradient(to right,rgb(128, 41, 228), #84edf5) !important; 
+    background-image:linear-gradient(to right,rgb(122, 49, 218), #84edf5) !important; 
   }
   .rego {
     display: flex;
