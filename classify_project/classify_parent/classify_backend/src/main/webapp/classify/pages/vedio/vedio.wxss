@@ -1,4 +1,8 @@
 /* pages/vedio/vedio.wxss */
+page{
+  background-image:linear-gradient(to right, #fbc2eb, #a6c1ee);
+  /* background-image: radial-gradient(circle, red, yellow, green); */
+}
 .picdiv{
   width: 80%;
   height: 600rpx;
@@ -13,7 +17,7 @@
 }
 .Image{
   height: 99%;
-  width: 100%;
+  width: 60%;
   margin: 5rpx 0;
 }
 .Button{

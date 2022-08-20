@@ -42,6 +42,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/vedio/vedio",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

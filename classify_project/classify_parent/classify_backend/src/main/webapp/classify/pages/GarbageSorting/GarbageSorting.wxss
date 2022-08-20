@@ -1,8 +1,13 @@
 /* pages/GarbageSorting/GarbageSorting.wxss */
+
+page{
+  background-image:linear-gradient(to right, #fbc2eb, #a6c1ee);
+  /* background-image: radial-gradient(circle, red, yellow, green); */
+}
 .picdiv{
   width: 80%;
   height: 600rpx;
-  border: 1px solid #424242;
+  border: 1px dashed #424242;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -13,7 +18,7 @@
 }
 .Image{
   height: 99%;
-  width: 100%;
+  width: 60%;
   margin: 5rpx 0;
 }
 .Button{
@@ -74,7 +79,7 @@
   width: 55%;
 }
 .telephone {
-  float: left;
+  margin-left: 40rpx;
   color: #333;
   font-size: 40rpx;
   width: 40%;
