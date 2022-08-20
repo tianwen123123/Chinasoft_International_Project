@@ -1,7 +1,8 @@
 /* pages/vedio/vedio.wxss */
 page{
-  background-image:linear-gradient(to right, #fbc2eb, #a6c1ee);
+  /* background-image:linear-gradient(to right, #fbc2eb, #a6c1ee); */
   /* background-image: radial-gradient(circle, red, yellow, green); */
+  background-color: #f8f8f8;
 }
 .picdiv{
   width: 80%;
@@ -26,6 +27,7 @@ page{
   align-items: center;
   margin-top: 20px;
   border-radius: 40rpx;
+  background-image:linear-gradient(to right,rgb(128, 41, 228), #84edf5) !important; 
   }
   .rego {
     display: flex;

@@ -1,9 +1,9 @@
 /* pages/GarbageSorting/GarbageSorting.wxss */
 
 page{
-  background-image:linear-gradient(to bottom,rgb(0, 255, 255), #f5fbfc );
+  /* background-image:linear-gradient(to right,rgb(0, 255, 255), #66e6eb ,#91e6f5); */
   /* background-image: radial-gradient(circle, red, yellow, green); */
-  /* background-color: rgb(167, 255, 255); */
+  background-color: #f8f8f8;
 }
 .picdiv{
   width: 80%;
@@ -28,6 +28,8 @@ page{
   align-items: center;
   margin-top: 20px;
   border-radius: 40rpx;
+  /* background-color: rgb(42, 230, 255) !important;*/
+    background-image:linear-gradient(to right,rgb(128, 41, 228), #84edf5) !important; 
   }
   .rego {
     display: flex;
