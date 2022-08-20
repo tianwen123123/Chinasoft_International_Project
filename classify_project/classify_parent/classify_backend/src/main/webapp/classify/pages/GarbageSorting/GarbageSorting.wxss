@@ -1,8 +1,9 @@
 /* pages/GarbageSorting/GarbageSorting.wxss */
 
 page{
-  background-image:linear-gradient(to right, #fbc2eb, #a6c1ee);
+  background-image:linear-gradient(to bottom,rgb(0, 255, 255), #f5fbfc );
   /* background-image: radial-gradient(circle, red, yellow, green); */
+  /* background-color: rgb(167, 255, 255); */
 }
 .picdiv{
   width: 80%;
