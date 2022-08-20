@@ -1,3 +1,12 @@
+### 第四版-车牌字符数据集 c_char
+借助“方正粗黑宋简体”，生成个省会简称的汉字字符数据集，  
+8：2 划分chs_train与chs_test:  
+['chuan', 'dian', 'e', 'gan', 'gan1', 'gui', 'hei', 'hu', 'ji', 'ji1', 'jin', 'jin1',  
+'jing', 'liao', 'lu', 'meng', 'min', 'ning','qin', 'qing', 'qiong', 'shan', 'su',   
+'tai', 'wan', 'xiang', 'xin', 'yu', 'yu1', 'yue', 'zang', 'zhe']  
+对应： 京沪津渝黑吉辽蒙冀新甘青陕宁豫鲁晋皖鄂湘苏川黔滇桂藏浙赣粤闽台琼    
+每个字符trainset:1600张，testset:400张  
+
 ### 第三版-车牌字符数据集 char_data_3
 分中英文字符chs,eng,按照8：2划分trainset与testset  
 eng_test与eng_train下分34个文件夹  
