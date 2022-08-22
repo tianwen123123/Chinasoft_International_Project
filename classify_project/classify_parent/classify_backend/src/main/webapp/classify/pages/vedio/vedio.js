@@ -137,7 +137,7 @@
             for(var i=0; i<=index;i++)
             {
               var turle ={
-                path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + i + "_" +res.data.data[i],
+                path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + i + "_" +res.data.data[1],
                 text:res.data.data[2][i]
               }
               result.push(turle)
@@ -146,7 +146,8 @@
               resultinfo:result,
               isshow:true,
             })
-
+            console.log(that.data.resultinfo)
+            console.log(that.data.resultvideopath)
           }else{
             wx.showToast({
               title: message,

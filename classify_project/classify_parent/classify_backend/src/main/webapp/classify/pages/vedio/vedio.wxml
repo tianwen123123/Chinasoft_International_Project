@@ -7,7 +7,7 @@
 <button type="primary" bindtap="regition" class="Button">识别</button>
 <view wx:if="{{isshow}}" class="resultdiv">
   <view class="resultvideodiv">
-    <video class="resultvedio" duration="1000" src="{{resultvediopath}}"></video>
+    <video class="resultvedio" src="{{resultvideopath}}"></video>
   </view>
 </view>
 

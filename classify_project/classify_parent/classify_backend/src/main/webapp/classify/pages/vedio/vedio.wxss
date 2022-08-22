@@ -52,6 +52,13 @@ page{
 .resultvedio{
     margin: 0;
 }
+.resultimgdiv{
+  width: 80%;
+  margin: 0 auto;
+}
+.resultimg{
+    margin: 0;
+}
 .telephone-box {
   width: 100%;
   height: 100rpx;
