@@ -10,6 +10,7 @@
         resultvideopath:'',
         buttonshow:false,
         resultinfo:[],
+        telephone:'',
     },
     onLoad(options) {
         this.setData({
@@ -20,7 +21,10 @@
   
     },
     onShow() {
-  
+      this.setData({
+        telephone:wx.getStorageSync("telephone")
+      })
+      console.log(this.data.telephone)
     },
     Realtimerecogn(){
   
@@ -57,7 +61,7 @@
           //上传视频
           wx.uploadFile({
             url: getApp().globalData.webUrl+'/video',
-            filePath: that.data.Filepath,
+            filePath: that.data.videoPath,
             formData: {
               'telephone':that.data.telephone
             },
@@ -111,7 +115,7 @@
         mask: true,
       })
       wx.request({
-        url: getApp().globalData.webUrl+'/picture?telephone='+that.data.telephone,
+        url: getApp().globalData.webUrl+'/video?telephone='+that.data.telephone,
         method:'get',
         success: (res) => {
           var message = res.data.message

@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service(interfaceClass = VideoService.class)
+@Service(interfaceClass = VideoService.class, timeout = 600000, retries = 0)
 @Transactional
 public class VideoServiceImpl implements VideoService {
     @Autowired
@@ -30,7 +30,7 @@ public class VideoServiceImpl implements VideoService {
 
         try {
             //请求的url
-            String url = "http://127.0.0.1:5000?/video?video=" + videoName;
+            String url = "http://127.0.0.1:5000/video?video=" + videoName;
             //获取响应
             //若出现超时，则说明python部分处理时间过长，需要设置超时时间
             ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);

@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service(interfaceClass = PictureService.class, timeout = 30000, retries = 0)
+@Service(interfaceClass = PictureService.class, timeout = 600000, retries = 0)
 @Transactional
 public class PictureServiceImpl implements PictureService {
 

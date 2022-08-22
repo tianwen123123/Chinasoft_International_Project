@@ -23,7 +23,7 @@ public class VideoController {
     @Autowired
     private RedisUtils redisUtils;
 
-    @Reference
+    @Reference(timeout = 600000,retries = 0)
     private VideoService videoService;
 
     @PostMapping("/video")
@@ -62,7 +62,9 @@ public class VideoController {
     @GetMapping("/video")
     public Result process(@RequestParam("telephone") String telephone) {
         Jedis jedis = redisUtils.getJedis();
+        System.out.println("telephone:" + telephone);
         String value = jedis.get(telephone + "/video");
+        System.out.println("value:" + value);
         Result result = null;
         if (value == null) {
             return new Result(false, MessageConstant.VIDEO_TIMEOUT);
