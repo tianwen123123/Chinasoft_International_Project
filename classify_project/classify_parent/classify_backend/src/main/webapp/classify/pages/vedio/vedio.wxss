@@ -6,7 +6,7 @@ page{
 }
 .picdiv{
   width: 80%;
-  height: 600rpx;
+  height: 470rpx;
   border: 1px solid #424242;
   display: flex;
   justify-content: center;

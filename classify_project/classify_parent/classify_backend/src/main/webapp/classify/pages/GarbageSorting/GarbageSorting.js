@@ -102,9 +102,6 @@ Page({
           wx.hideLoading({
             success: (res) => {},
           })
-          that.setData({
-            show:true
-          })
           wx.showToast({
             title: message,
             icon:'none',
