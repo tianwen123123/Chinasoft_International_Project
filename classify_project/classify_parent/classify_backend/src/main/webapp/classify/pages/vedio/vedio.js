@@ -3,12 +3,21 @@
     data: {
         Filepath:"../../images/_plus.png",
         resultText:"信息",
-        isshow:false,
+        isshow:true,
         telephone:'',
         imgisshow:true,
         videoPath:'',
         resultvideopath:'',
         buttonshow:false,
+        resultinfo:[{
+          path:"../../images/_pic.png",
+          text:"123"
+        },
+        {
+          path:"../../images/_pic.png",
+          text:"456"
+        },
+      ],
     },
     onLoad(options) {
         this.setData({
@@ -124,11 +133,24 @@
               icon:'none',
               duration:1000
             })
-            var index = res.data.data[2];
             that.setData({
-              resultvideopath:"http://rgbvrgbry.hb-bkt.clouddn.com/" + index + "_" +res.data.data[i],
-              isshow:true
+              resultvideopath:"http://rgbvrgbry.hb-bkt.clouddn.com/" + res.data.data[3],
             })
+            var result = [];
+            var index = res.data.data[0];
+            for(var i=0; i<=index;i++)
+            {
+              var turle ={
+                path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + i + "_" +res.data.data[i],
+                text:res.data.data[2][i]
+              }
+              result.push(turle)
+            }
+            that.setData({
+              resultinfo:result,
+              isshow:true,
+            })
+
           }else{
             wx.showToast({
               title: message,
