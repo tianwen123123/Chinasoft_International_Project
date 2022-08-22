@@ -24,7 +24,7 @@ public class PictureController {
     @Autowired
     private RedisUtils redisUtils;
     //dubbo远程服务调用
-    @Reference(timeout = 120000,retries = 0)
+    @Reference(timeout = 600000,retries = 0)
     private PictureService pictureService;
 
     /**

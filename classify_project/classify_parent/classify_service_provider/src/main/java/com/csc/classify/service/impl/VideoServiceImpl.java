@@ -23,7 +23,8 @@ public class VideoServiceImpl implements VideoService {
     private RestTemplate restTemplate;
 
     public Result process(String videoName) {
-        String classify = null;
+        String locate_video = null;
+        String locate_pic = null;
         List licenselist = null;
         ArrayList ret = new ArrayList<String>();
 
@@ -38,9 +39,18 @@ public class VideoServiceImpl implements VideoService {
             String body = responseEntity.getBody();
 
             JSONObject jsonObject = JSON.parseObject(body);
-            classify = jsonObject.getString("classify_pic");
+            locate_video = jsonObject.getString("locate_video");
+            locate_pic = jsonObject.getString("locate_pic");
+            licenselist = jsonObject.getObject("licenselist", List.class);
 
-            ret.add(classify);
+            if (licenselist == null || licenselist.size() == 0) {
+                return new Result(false, MessageConstant.NOT_FIND_LICENSE);
+            }
+            int index = locate_pic.indexOf("_");
+            ret.add(locate_pic.substring(0, index));
+            ret.add(locate_pic.substring(index + 1));
+            ret.add(licenselist);
+            ret.add(locate_video);
         } catch (RestClientException e) {
             e.printStackTrace();
             return new Result(false, MessageConstant.CLASSIFY_FAIL);

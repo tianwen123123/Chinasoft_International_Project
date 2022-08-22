@@ -20,7 +20,7 @@ dubbo:
   scan:
     base-packages: com.csc.classify.service
   provider:
-    timeout: 120000
+    timeout: 600000
 
 # 关闭Redis健康监测
 management:
