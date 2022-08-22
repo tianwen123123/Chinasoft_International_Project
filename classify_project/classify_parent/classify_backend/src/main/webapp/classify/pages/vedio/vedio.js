@@ -3,21 +3,13 @@
     data: {
         Filepath:"../../images/_plus.png",
         resultText:"信息",
-        isshow:true,
+        isshow:false,
         telephone:'',
         imgisshow:true,
         videoPath:'',
         resultvideopath:'',
         buttonshow:false,
-        resultinfo:[{
-          path:"../../images/_pic.png",
-          text:"123"
-        },
-        {
-          path:"../../images/_pic.png",
-          text:"456"
-        },
-      ],
+        resultinfo:[],
     },
     onLoad(options) {
         this.setData({
