@@ -39,16 +39,8 @@ public class VideoServiceImpl implements VideoService {
 
             JSONObject jsonObject = JSON.parseObject(body);
             classify = jsonObject.getString("classify_pic");
-            licenselist = jsonObject.getObject("licenselist", List.class);
-            System.out.println(classify);
-            System.out.println(licenselist);
-            if (licenselist == null || licenselist.size() == 0) {
-                return new Result(false, MessageConstant.NOT_FIND_LICENSE);
-            }
-            int index = classify.indexOf("_");
-            ret.add(classify.substring(index + 1));
-            ret.add(licenselist);
-            ret.add(classify.substring(0, index));
+
+            ret.add(classify);
         } catch (RestClientException e) {
             e.printStackTrace();
             return new Result(false, MessageConstant.CLASSIFY_FAIL);

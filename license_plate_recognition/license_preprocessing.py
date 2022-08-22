@@ -127,24 +127,6 @@ def find_waves(threshold, histogram):
     return wave_peaks
 
 
-def remove_leftandright_border(img, plate_binary_img):
-    """ 去除车牌左右无用的边缘部分，确定左右边界 """
-    col_histogram = np.sum(img, axis=0)  # 数组的每一列求和
-    col_min = np.min(col_histogram)
-    col_average = np.sum(col_histogram) / img.shape[1]
-    col_threshold = (col_min + col_average) / 2
-    wave_peaks = find_waves(col_threshold, col_histogram)
-    # 挑选跨度最大的波峰
-    wave_span = 0.0
-    for wave_peak in wave_peaks:
-        span = wave_peak[1] - wave_peak[0]
-        if span > wave_span:
-            wave_span = span
-            selected_wave = wave_peak
-
-    plate_binary_img_ret = plate_binary_img[:, selected_wave[0]:selected_wave[1]]
-    return plate_binary_img_ret
-
 
 def remove_upanddown_border(img):
     """ 去除车牌上下无用的边缘部分，确定上下边界 """

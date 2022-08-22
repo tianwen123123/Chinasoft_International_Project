@@ -7,6 +7,7 @@ Page({
       isshow:false,
       telephone:'',
       resultinfo:[],
+      buttonshow:false,
   },
   onLoad(options) {
       this.setData({
@@ -20,6 +21,9 @@ Page({
   },
   PhotoRecognition(){
     var that = this
+    that.setData({
+      buttonshow:false,
+    })
     wx.chooseMedia({
       camera: 'back',
       count: 1,
@@ -49,6 +53,9 @@ Page({
                 icon:"none",
                 duration:1000
               })
+              that.setData({
+                buttonshow:true
+              })
             }else{
               wx.showToast({
                 title: jsonObj.message,
@@ -72,6 +79,7 @@ Page({
   },
   regition(){
     var that = this
+    if(that.data.buttonshow){
     if(that.data.Filepath=="../../images/_plus.png"){
         wx.showToast({
           title: '请选择图片',
@@ -108,7 +116,7 @@ Page({
           {
             var turle ={
               path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + index + "_" +res.data.data[i],
-              text:res.data.data[1][idnex]
+              text:res.data.data[1][index]
             }
             result.push(turle)
           }
@@ -134,5 +142,12 @@ Page({
         }, 2000)
       },
     })
+  }else{
+    wx.showToast({
+      title: '图片未上传成功，不可识别',
+      icon:'none',
+      duration:1000,
+    })
+  }
   },
 })
