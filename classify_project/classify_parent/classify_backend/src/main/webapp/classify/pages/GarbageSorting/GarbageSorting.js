@@ -102,9 +102,6 @@ Page({
           wx.hideLoading({
             success: (res) => {},
           })
-          that.setData({
-            show:true
-          })
           wx.showToast({
             title: message,
             icon:'none',
@@ -115,8 +112,8 @@ Page({
           for(var i=0; i<=index;i++)
           {
             var turle ={
-              path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + index + "_" +res.data.data[i],
-              text:res.data.data[1][index]
+              path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + i + "_" +res.data.data[i],
+              text:res.data.data[1][i]
             }
             result.push(turle)
           }

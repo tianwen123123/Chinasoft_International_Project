@@ -3,18 +3,22 @@
 <image wx:if="{{imgisshow}}" src="{{Filepath}}" mode="aspectFit" class="Image" bindtap="VedioRecognition"></image>
 <video wx:if="{{videoPath}}" class="video" src="{{videoPath}}"></video>
 </view>
-<!-- <button class="rego" bindtap="VedioRecognition">上传视频</button> -->
+<button class="rego" bindtap="VedioRecognition">上传视频</button>
 <button type="primary" bindtap="regition" class="Button">识别</button>
 <view wx:if="{{isshow}}" class="resultdiv">
+  <view class="resultvideodiv">
+    <video class="resultvedio" duration="1000" src="{{resultvediopath}}"></video>
+  </view>
+</view>
+
+<view wx:if="{{isshow}}" wx:for="{{resultinfo}}" wx:key="this" class="resultdiv">
   <view class="resultimgdiv">
-    <!-- <image class="resultimg" src="{{resultimgpath}}" mode="aspectFit"></image> -->
-    <video class="resultvedio" src="{{resultvediopath}}"></video>
+    <image class="resultimg" src="{{item.path}}" mode="aspectFit"></image>
   </view>
-  <view class="resulttextinfo">
-  <text>识别结果:
-  </text>
-  {{resultText}}
-  </view>
+  <view class='telephone-box'>
+      <text class='telephone'>识别结果</text>
+      <input type="text" value="{{item.text}}" class='number'/>
+    </view>
 </view>
 
 <view class="bottomdiv"></view>
