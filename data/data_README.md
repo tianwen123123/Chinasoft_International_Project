@@ -1,3 +1,13 @@
+### 第六版-车牌字符数据集 pp_char  
+--相较于第五版进行了字体随机旋转、笔画粘连断裂等预处理   
+字体：“方正粗黑宋简体”、“黑体”、“方正兰亭黑长简体”  
+8：2 划分train与test:  
+['chuan', 'e1', 'gan', 'gan1', 'gui', 'gui1', 'hei', 'hu','ji', 'jin',  
+'jing', 'jl', 'liao', 'lu', 'meng', 'min', 'ning', 'qing', 'qiong',  
+'shan', 'su', 'sx', 'wan', 'xiang', 'xin', 'yu', 'yu1', 'yue', 'yun', 'zang', 'zhe']
+对应： 京沪津渝黑吉辽蒙冀新甘青陕宁豫鲁晋皖鄂湘苏川贵云桂藏浙赣粤闽琼    
+每个字符trainset:876张，testset:222张
+
 ### 第五版-车牌字符数据集 c_char_2  
 --修正1：类别已更正  
 借助“方正粗黑宋简体”、“黑体”、“方正兰亭黑长简体”，  
