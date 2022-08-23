@@ -1,9 +1,5 @@
 // pages/realtimemonitor/realtimemonitor.js
 Page({
-  globalData: {
-    socketStatus: 'closed',  // 标识是否开启socket
-    socketMsgQueue: ['hello'] // 发送的数据，也可以是其他形式
-  },
   data:{
     imageArray:{},
     left:0,
@@ -13,16 +9,9 @@ Page({
     show:false,
     telephone:'',
     isshow:false,
-    resultinfo:[
-      {
-        path:"../../images/_pic.png",
-        text:"12324",
-      },
-      {
-        path:"../../images/_pic_select.png",
-        text:"456"
-      }
-    ],
+    startopen:true,
+    stopopen:false,
+    resultinfo:[],
   },
 
 
@@ -55,41 +44,73 @@ Page({
       imageArray:{},
       telephone:wx.getStorageSync('telephone')
     })
-
   },
-
-
-  initWebSocket(socket) {
-    console.log(socket)
-    console.log(11111111)
-    socket.on('connect', () => {
-        console.log('建立链接')
-        socket.emit('message', { 'data': 'I\'m connected!' })
-    })
-    socket.on('disconnect', () => {
-        console.log('连接断开')
-        socket.emit('message', { 'data': 'I\'m disconnected!' });
-    })
-    socket.on('card message', msg => {
-        // 接受数据
-    })
-    socket.on('error message', msg => {
-        console.log('error:' + msg)
-        
-    })
-    console.log(socket)
-},
 start(){
   var that = this
+  if(that.data.startopen){
   that.setData({
     show:true,
+    startopen:false,
+    stopopen:true,
   })
+  //发送请求
+  wx.request({
+    url: getApp().globalData.webUrl+"",
+    method ,
+    success: (res) => {
+      
+      that.setData({
+
+      })
+    },
+    fail: (res) => {
+      console.log("请求失败")
+    },
+    complete: (res) => {},
+  })
+}else{
+  wx.showToast({
+    title: '正在识别,请勿重复点击',
+    icon:'none',
+    duration:1000,
+  })
+}
 },
 stop(){
   var that = this
+  if(that.data.stopopen){
   that.setData({
     show:false,
+    stopopen:false,
+    startopen:true,
   })
+  wx.showToast({
+    title: '监测结束',
+    icon:'none',
+    duration:1500,
+  })
+    //发送请求
+    wx.request({
+      url: getApp().globalData.webUrl+"",
+      method ,
+      success: (res) => {
+        
+        that.setData({
+  
+        })
+      },
+      fail: (res) => {
+        console.log("请求失败")
+      },
+      complete: (res) => {},
+    })
+}else{
+  wx.showToast({
+    title: '还未开始监测',
+    icon:'none',
+    duration:1000,
+  })
+}
 },
 
   error(e) {

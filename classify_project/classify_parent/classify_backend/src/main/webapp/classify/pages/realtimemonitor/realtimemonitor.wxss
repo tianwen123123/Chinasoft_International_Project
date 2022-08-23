@@ -25,6 +25,7 @@ page {
 }
 .btn-area button{
   width: 140px !important;
+  border-radius: 10px;
 }
 .preview-tips {
   margin: 20rpx 0;  
@@ -81,7 +82,7 @@ page {
 .dotimg {
   /* Safari and Chrome播放器写法 */
   -webkit-animation-name: breath;/* 动画名称 */
-  -webkit-animation-duration: 1.5s;/* 动画时长1.5秒 */
+  -webkit-animation-duration: 1.0s;/* 动画时长1.0秒 */
   -webkit-animation-timing-function: ease-in-out;/* 动画速度曲线：以低速开始和结束 */
   -webkit-animation-iteration-count: infinite;/* 播放次数：无限 */
   
