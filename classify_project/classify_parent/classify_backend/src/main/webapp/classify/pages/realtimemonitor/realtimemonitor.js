@@ -1,6 +1,9 @@
 // pages/realtimemonitor/realtimemonitor.js
 Page({
-
+  globalData: {
+    socketStatus: 'closed',  // 标识是否开启socket
+    socketMsgQueue: ['hello'] // 发送的数据，也可以是其他形式
+  },
   data:{
     imageArray:{},
     left:0,
@@ -52,44 +55,35 @@ Page({
       imageArray:{},
       telephone:wx.getStorageSync('telephone')
     })
-    var source = new EventSource(url);
+
   },
 
 
-  // start(){
-  //   var that = this
-  //   console.log("开始监听")
-  //   that.listener.start()
-  //   setTimeout(() => {
-  //     that.requestarray =  setInterval(this.requestimg, 500);
-  //   }, 1000);
-  // },
-  // stop(){
-  //   var that = this
-  //     that.listener.stop()
-  //     console.log("停止监听")
-  //     clearInterval(that.requestarray)
-  //     that.setData({
-  //       rectangleshow:false
-  //     })
-  // },
-
+  initWebSocket(socket) {
+    console.log(socket)
+    console.log(11111111)
+    socket.on('connect', () => {
+        console.log('建立链接')
+        socket.emit('message', { 'data': 'I\'m connected!' })
+    })
+    socket.on('disconnect', () => {
+        console.log('连接断开')
+        socket.emit('message', { 'data': 'I\'m disconnected!' });
+    })
+    socket.on('card message', msg => {
+        // 接受数据
+    })
+    socket.on('error message', msg => {
+        console.log('error:' + msg)
+        
+    })
+    console.log(socket)
+},
 start(){
   var that = this
   that.setData({
-    show:true
+    show:true,
   })
-  source.onopen = function (event) {
-    // ...
-  };
-  // wx.request({
-  //   url: 'url',
-  //   header: header,
-  //   method: method,
-  //   success: (result) => {},
-  //   fail: (res) => {},
-  //   complete: (res) => {},
-  // })
 },
 stop(){
   var that = this
@@ -98,35 +92,6 @@ stop(){
   })
 },
 
-  // takePhoto() {
-  //   this.ctx.takePhoto({
-  //     quality: 'high',
-  //     success: (res) => {
-  //       this.setData({
-  //         src: res.tempImagePath,
-  //         videoSrc:'',
-  //       })
-  //     }
-  //   })
-  // },
-  // startRecord() {
-  //   this.ctx.startRecord({
-  //     success: (res) => {
-  //       console.log('startRecord')
-  //     }
-  //   })
-  // },
-  // stopRecord() {
-  //   this.ctx.stopRecord({
-  //     success: (res) => {
-  //       this.setData({
-  //         // src: res.tempThumbPath,
-  //         src:'',
-  //         videoSrc: res.tempVideoPath
-  //       })
-  //     }
-  //   })
-  // },
   error(e) {
     console.log(e.detail)
   }
