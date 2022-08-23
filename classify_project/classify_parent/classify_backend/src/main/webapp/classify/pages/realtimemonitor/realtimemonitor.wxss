@@ -49,3 +49,59 @@ page {
   width:50%;
   float: left;
 }
+.resultdiv{
+  width: 100%;
+  margin: 30px auto;
+}
+.resultimgdiv{
+  width: 80%;
+  margin: 0 auto;
+}
+.resultimg{
+    margin: 0;
+}
+
+.dot{
+  position: fixed;
+  right: 20px;
+  top: 50px;
+  height: 30px;
+  font-size: 16px;
+  z-index: 99;
+}
+.dot text{
+  float: right;
+  line-height: 30px;
+}
+.dotimg{
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+}
+.dotimg {
+  /* Safari and Chrome播放器写法 */
+  -webkit-animation-name: breath;/* 动画名称 */
+  -webkit-animation-duration: 1.5s;/* 动画时长1.5秒 */
+  -webkit-animation-timing-function: ease-in-out;/* 动画速度曲线：以低速开始和结束 */
+  -webkit-animation-iteration-count: infinite;/* 播放次数：无限 */
+  
+}
+
+@keyframes breath {
+  /* 动画开始时的不透明度 */
+  from {
+      opacity: 0.1;
+  }
+
+  /* 动画50% 时的不透明度 */
+  50% {
+      opacity: 1;
+  }
+
+  /* 动画结束时的不透明度 */
+  to {
+      opacity: 0.1;
+  }
+
+  
+}
