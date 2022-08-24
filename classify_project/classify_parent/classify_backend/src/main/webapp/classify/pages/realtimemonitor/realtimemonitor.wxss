@@ -28,14 +28,9 @@ page {
   border-radius: 10px;
 }
 .preview-tips {
-  margin: 20rpx 0;  
+  margin-top: 10px; 
 }
 
-.video {
-  margin: 50px auto;
-  width: 100%;
-  height: 300px;
-}
 .covertext{
   display: flex;
   justify-content: center;
@@ -52,15 +47,19 @@ page {
 }
 .resultdiv{
   width: 100%;
-  margin: 30px auto;
+  margin: 5px auto;
 }
 .resultimgdiv{
-  width: 80%;
+  width: 90%;
+  height: 100px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.resultimg{
+/* .resultimg{
     margin: 0;
-}
+} */
 
 .dot{
   position: fixed;

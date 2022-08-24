@@ -13,11 +13,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="classify_backend" target="1.5" />
-      <module name="classify_common" target="1.5" />
-      <module name="classify_interface" target="1.5" />
-      <module name="classify_parent" target="1.5" />
-      <module name="classify_service_provider" target="1.5" />
+      <module name="classify_backend" target="1.8" />
+      <module name="classify_common" target="1.8" />
+      <module name="classify_interface" target="1.8" />
+      <module name="classify_parent" target="1.8" />
+      <module name="classify_service_provider" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

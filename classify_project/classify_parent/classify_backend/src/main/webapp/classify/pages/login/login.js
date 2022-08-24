@@ -77,7 +77,6 @@ Page({
 				success: (res) => {
           console.log(res)
           var message = res.data.message
-					console.log(res.header["Set-Cookie"]);
 					if (res.data.flag == true) {
 						wx.showToast({
 							title: message,
