@@ -74,11 +74,11 @@ Page({
     })
 
   },
-  Realtimerecogn(){
-
-  },
   regition(){
     var that = this
+    that.setData({
+      isshow:false
+    })
     if(that.data.buttonshow){
     if(that.data.Filepath=="../../images/_plus.png"){
         wx.showToast({
@@ -118,8 +118,6 @@ Page({
             result.push(turle)
           }
           that.setData({
-          //   resultimgpath: "http://rgbvrgbry.hb-bkt.clouddn.com/"+res.data.data[2]+"_"+res.data.data[0],
-          //   resultText:res.data.data[1][res.data.data[2]],
             resultinfo:result,
             isshow:true
           })

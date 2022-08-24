@@ -1,3 +1,8 @@
+### 补充-车牌字符数据集 num1   
+应字符分割识别的需求，特制宽度较大的数字１字符数据集　　　     
+8：2 划分train与test:  
+trainset:800张，test：200张    
+
 ### 第七版-车牌字符数据集 pp_char_blur  
 --相较于第六版进行了字体随机模糊预处理   
 
@@ -7,7 +12,7 @@
 8：2 划分train与test:  
 ['chuan', 'e1', 'gan', 'gan1', 'gui', 'gui1', 'hei', 'hu','ji', 'jin',  
 'jing', 'jl', 'liao', 'lu', 'meng', 'min', 'ning', 'qing', 'qiong',  
-'shan', 'su', 'sx', 'wan', 'xiang', 'xin', 'yu', 'yu1', 'yue', 'yun', 'zang', 'zhe']
+'shan', 'su', 'sx', 'wan', 'xiang', 'xin', 'yu', 'yu1', 'yue', 'yun', 'zang', 'zhe']       
 对应： 京沪津渝黑吉辽蒙冀新甘青陕宁豫鲁晋皖鄂湘苏川贵云桂藏浙赣粤闽琼    
 每个字符trainset:876张，testset:222张
 

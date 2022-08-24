@@ -29,15 +29,12 @@
             </view>
         </view>
     </view>
-    <view class="preview-tips">结果</view>
-    <!-- <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image> -->
-    <!-- <image src="data:image/png;base64,{{base64}}"></image> -->
-    <!-- <image src="../../images/_lock.png"></image> -->
-    <!-- <video wx:if="{{videoSrc}}" class="video" src="{{videoSrc}}"></video> -->
+    <view wx:if="{{isshow}}" class="preview-tips">检测结果</view>
+    <view wx:if="{{flag}}" class="preview-tips">未检测到车牌</view>
 
   <view wx:if="{{isshow}}" wx:for="{{resultinfo}}" wx:key="this" class="resultdiv">
     <view class="resultimgdiv">
-      <image class="resultimg" src="{{item.path}}" mode="aspectFit"></image>
+      <image class="resultimg" src="{{title+item}}" mode="aspectFit"></image>
     </view>
   </view>
   </view>

@@ -1,17 +1,14 @@
 // pages/realtimemonitor/realtimemonitor.js
 Page({
   data:{
-    imageArray:{},
-    left:0,
-    top:0,
-    rectangleshow:false,
-    base64:"",
     show:false,
     telephone:'',
     isshow:false,
     startopen:true,
     stopopen:false,
     resultinfo:[],
+    title:"http://rgbvrgbry.hb-bkt.clouddn.com/",
+    flag:false,
   },
 
 
@@ -52,16 +49,16 @@ start(){
     show:true,
     startopen:false,
     stopopen:true,
+    isshow:false,
+    resultinfo:[],
+    flag:false
   })
   //发送请求
   wx.request({
-    url: getApp().globalData.webUrl+"",
-    method ,
+    url: "http://127.0.0.1:5000/live_start?telephone="+that.data.telephone,
+    method: 'get' ,
     success: (res) => {
-      
-      that.setData({
-
-      })
+      console.log("请求成功")
     },
     fail: (res) => {
       console.log("请求失败")
@@ -79,25 +76,35 @@ start(){
 stop(){
   var that = this
   if(that.data.stopopen){
-  that.setData({
-    show:false,
-    stopopen:false,
-    startopen:true,
-  })
-  wx.showToast({
-    title: '监测结束',
-    icon:'none',
-    duration:1500,
-  })
+
     //发送请求
     wx.request({
-      url: getApp().globalData.webUrl+"",
-      method ,
+      url:  "http://127.0.0.1:5000/live_stop?telephone="+that.data.telephone,
+      method:'get' ,
       success: (res) => {
-        
         that.setData({
-  
+          show:false,
+          stopopen:false,
+          startopen:true,
+          resultinfo:res.data.licenselist,
+          isshow:true,
         })
+        if(res.data.len==0){
+          that.setData({
+            flag:true
+          })
+        }else{
+          that.setData({
+            flag:false
+          })
+        }
+        wx.showToast({
+          title: '监测结束',
+          icon:'none',
+          duration:1500,
+        })
+        console.log(res)
+        console.log(that.data.resultinfo)
       },
       fail: (res) => {
         console.log("请求失败")

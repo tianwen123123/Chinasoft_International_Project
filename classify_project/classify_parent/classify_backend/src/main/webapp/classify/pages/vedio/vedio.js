@@ -101,6 +101,9 @@
     //识别
     regition(){
       var that = this
+      that.setData({
+        isshow:false
+      })
       if(that.data.videoPath==""){
           wx.showToast({
             title: '请上传视频',
