@@ -92,16 +92,23 @@ page {
   from {
       opacity: 0.1;
   }
-
   /* 动画50% 时的不透明度 */
   50% {
       opacity: 1;
   }
-
   /* 动画结束时的不透明度 */
   to {
       opacity: 0.1;
   }
-
-  
+}
+.group{
+  width: 300px;
+  margin: 0 auto;
+  height: 60px;
+  line-height: 60px;
+  font-size: large;
+}
+.label-2{
+  margin: 0 30px;
+  display: inline;
 }

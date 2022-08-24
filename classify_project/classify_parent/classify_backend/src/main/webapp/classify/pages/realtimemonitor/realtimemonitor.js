@@ -9,6 +9,13 @@ Page({
     resultinfo:[],
     title:"http://rgbvrgbry.hb-bkt.clouddn.com/",
     flag:false,
+    radioItems: [
+      {name: '使用1', value: '美国', checked: 'true'},
+      {name: '使用2', value: '中国'}
+    ],
+    selectedindex:0,
+    method0:true,
+    method1:false,
   },
 
 
@@ -118,6 +125,35 @@ stop(){
     duration:1000,
   })
 }
+},
+//点击选项
+radioChange(e) {
+  var that = this
+  console.log(e)
+  const checked = e.detail.value
+  const changed = {}
+  for (let i = 0; i < that.data.radioItems.length; i++) {
+    if (checked.indexOf(that.data.radioItems[i].name) !== -1) {
+      changed['radioItems[' + i + '].checked'] = true
+      that.setData({
+        selectedindex:i
+      })
+    } else {
+      changed['radioItems[' + i + '].checked'] = false
+    }
+  }
+  that.setData(changed)
+  if(that.data.selectedindex==0){
+    that.setData({
+      method0:true,
+      method1:false,
+    })
+  }else if(that.data.selectedindex==1){
+    that.setData({
+      method0:false,
+      method1:true
+    })
+  }
 },
 
   error(e) {
