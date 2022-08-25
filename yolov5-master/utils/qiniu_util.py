@@ -13,7 +13,7 @@ def get_token(pic_name):
     # 构建鉴权对象
     q = Auth(access_key, secret_key)
     # 要上传的空间
-    bucket_name = 'classify-picture'
+    bucket_name = 'recognization-file'
     # 上传后保存的文件名
     key = pic_name
     # 生成上传 Token，可以指定过期时间等
@@ -28,7 +28,7 @@ def upload(pic_name, file, flag=True):
     # 构建鉴权对象
     q = Auth(access_key, secret_key)
     # 要上传的空间
-    bucket_name = 'classify-picture'
+    bucket_name = 'recognization-file'
     # 上传后保存的文件名
     key = pic_name
 
