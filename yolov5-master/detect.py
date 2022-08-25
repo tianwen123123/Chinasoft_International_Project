@@ -405,7 +405,7 @@ def pic_detect():
         model_eng = load_model(model_path_eng)
 
     pic_url = request.values.get("pic")
-    resp = urllib.request.urlopen("http://rgbvrgbry.hb-bkt.clouddn.com/" + pic_url)
+    resp = urllib.request.urlopen("http://rh5dq0hiv.hb-bkt.clouddn.com/" + pic_url)
     image = np.asarray(bytearray(resp.read()), dtype="uint8")
     # cv2.imdecode()函数将数据解码成Opencv图像格式
     plate_image = cv.imdecode(image, cv.IMREAD_COLOR)
@@ -455,7 +455,7 @@ def video_locate():
         model_eng = load_model(model_path_eng)
 
     video_url_simple = request.values.get("video")
-    video_url = "http://rgbvrgbry.hb-bkt.clouddn.com/" + video_url_simple
+    video_url = "http://rh5dq0hiv.hb-bkt.clouddn.com/" + video_url_simple
     video = requests.get(video_url, headers={
         "Connection": "keep-alive",
     }, stream=True)
