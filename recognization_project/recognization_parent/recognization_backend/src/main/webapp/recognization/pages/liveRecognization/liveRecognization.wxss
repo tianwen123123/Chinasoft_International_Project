@@ -109,6 +109,6 @@ page {
   font-size: large;
 }
 .label-2{
-  margin: 0 30px;
+  margin: 0 20px;
   display: inline;
 }

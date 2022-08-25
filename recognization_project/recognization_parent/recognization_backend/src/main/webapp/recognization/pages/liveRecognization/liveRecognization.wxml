@@ -2,7 +2,7 @@
 <view class="page-body">
   <radio-group class="group" bindchange="radioChange">
     <view class="label-2" wx:for="{{radioItems}}" wx:key="this">
-      <radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}"></radio>
+      <radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}" disabled="{{item.disabled}}"></radio>
       <label class="label-2-text" for="{{item.name}}"><text>{{item.name}}</text></label>
     </view>
 </radio-group>
@@ -24,10 +24,10 @@
     <view class="buttondiv" wx:if="{{method1}}">
         <view class="btn_right">
             <view class="btn-area">
-            <button type="primary" bindtap="start">新的</button>
+            <button type="primary" bindtap="live_start">车牌定位</button>
             </view>
             <view class="btn-area">
-              <button type="primary" bindtap="stop">新的</button>
+              <button type="primary" bindtap="live_stop">定位结束</button>
             </view>
         </view>
     </view>
