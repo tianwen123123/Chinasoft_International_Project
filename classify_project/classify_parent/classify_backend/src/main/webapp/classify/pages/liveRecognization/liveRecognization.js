@@ -7,7 +7,7 @@ Page({
     startopen: true,
     stopopen: false,
     resultinfo: [],
-    title: "http://rgbvrgbry.hb-bkt.clouddn.com/",
+    title: "http://rh5dq0hiv.hb-bkt.clouddn.com/",
     flag: false,
     radioItems: [{
         name: '使用1',

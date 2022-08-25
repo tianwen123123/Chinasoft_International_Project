@@ -112,7 +112,7 @@ Page({
           for(var i=0; i<=index;i++)
           {
             var turle ={
-              path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + i + "_" +res.data.data[i],
+              path:"http://rh5dq0hiv.hb-bkt.clouddn.com/" + i + "_" +res.data.data[i],
               text:res.data.data[1][i]
             }
             result.push(turle)        //将每一个字典放到数组中

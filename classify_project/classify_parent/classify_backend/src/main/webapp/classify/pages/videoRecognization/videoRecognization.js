@@ -124,13 +124,13 @@ Page({
               duration: 1000
             })
             that.setData({
-              resultvideopath: "http://rgbvrgbry.hb-bkt.clouddn.com/" + res.data.data[3],
+              resultvideopath: "http://rh5dq0hiv.hb-bkt.clouddn.com/" + res.data.data[3],
             })
             var result = [];
             var index = res.data.data[0];
             for (var i = 0; i <= index; i++) {
               var turle = {
-                path: "http://rgbvrgbry.hb-bkt.clouddn.com/" + i + "_" + res.data.data[1],
+                path: "http://rh5dq0hiv.hb-bkt.clouddn.com/" + i + "_" + res.data.data[1],
                 text: res.data.data[2][i]
               }
               result.push(turle)
