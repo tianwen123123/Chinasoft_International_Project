@@ -1,32 +1,27 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/GarbageSorting/GarbageSorting",
     "pages/login/login",
+    "pages/pictureRecognization/pictureRecognization",
     "pages/registered/registered",
-    "pages/result/result",
-    "pages/studentinfo/studentinfo",
-    "pages/healthcode/healthcode",
-    "pages/vedio/vedio",
-    "pages/realtimemonitor/realtimemonitor"
+    "pages/videoRecognization/videoRecognization",
+    "pages/liveRecognization/liveRecognization"
   ],
   "tabBar": {
     "list": [
         {
-            "pagePath": "pages/GarbageSorting/GarbageSorting",
+            "pagePath": "pages/pictureRecognization/pictureRecognization",
             "iconPath": "images/_pic.png",
             "selectedIconPath": "images/_pic_select.png",
             "text": "图片识别"
         },
         {
-            "pagePath": "pages/vedio/vedio",
+            "pagePath": "pages/videoRecognization/videoRecognization",
             "iconPath": "images/_video.png",
             "selectedIconPath": "images/_video_select.png",
             "text": "视频识别"
         },
         {
-          "pagePath": "pages/realtimemonitor/realtimemonitor",
+          "pagePath": "pages/liveRecognization/liveRecognization",
           "iconPath": "images/_camera.png",
           "selectedIconPath": "images/_camera_select.png",
           "text": "实时监测"

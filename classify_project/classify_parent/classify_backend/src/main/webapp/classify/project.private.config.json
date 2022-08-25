@@ -10,7 +10,7 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/GarbageSorting/GarbageSorting",
+          "pathName": "pages/pictureRecognization/pictureRecognization",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -31,28 +31,14 @@
         },
         {
           "name": "",
-          "pathName": "pages/registered/registered",
+          "pathName": "pages/liveRecognization/liveRecognization",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/realtimemonitor/realtimemonitor",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/vedio/vedio",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/studentinfo/studentinfo",
+          "pathName": "pages/videoRecognization/videoRecognization",
           "query": "",
           "launchMode": "default",
           "scene": null

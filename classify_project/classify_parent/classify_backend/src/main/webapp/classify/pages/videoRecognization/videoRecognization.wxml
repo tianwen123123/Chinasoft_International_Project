@@ -1,10 +1,10 @@
-<!--pages/vedio/vedio.wxml-->
+<!--pages/videoRecognization/videoRecognization.wxml-->
 <view class="picdiv">
-<image wx:if="{{imgisshow}}" src="{{Filepath}}" mode="aspectFit" class="Image" bindtap="VedioRecognition"></image>
+<image wx:if="{{imgisshow}}" src="{{Filepath}}" mode="aspectFit" class="Image" bindtap="upLoadVedio"></image>
 <video wx:if="{{videoPath}}" class="video" src="{{videoPath}}"></video>
 </view>
-<button class="rego" bindtap="VedioRecognition">上传视频</button>
-<button type="primary" bindtap="regition" class="Button">识别</button>
+<button class="rego" bindtap="upLoadVedio">上传视频</button>
+<button type="primary" bindtap="Recognization" class="Button">识别</button>
 <view wx:if="{{isshow}}" class="resultdiv">
   <view class="resultvideodiv">
     <video class="resultvedio" src="{{resultvideopath}}"></video>

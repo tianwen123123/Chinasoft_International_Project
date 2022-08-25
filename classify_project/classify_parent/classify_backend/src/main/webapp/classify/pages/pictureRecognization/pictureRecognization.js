@@ -1,29 +1,25 @@
-// pages/GarbageSorting/GarbageSorting.js
+// pages/pictureRecognization/pictureRecognization.js
 Page({
   data: {
       Filepath:"../../images/_plus.png",
-      resultimgpath:"../../images/_plus.png",
-      resultText:'',
-      isshow:false,
+      isshow:false,         //识别结果显示
       telephone:'',
-      resultinfo:[],
-      buttonshow:false,
+      resultinfo:[],        //请求到的信息结果
+      buttonshow:false,     //识别按钮是否可用
   },
-  onLoad(options) {
+  onLoad(options) {    //获取传递到的手机号码
       this.setData({
         telephone:options.telephone
       })
   },
-  onReady() {
 
-  },
-  onShow() {
-  },
-  PhotoRecognition(){
+  //上传图片
+  upLoadPicture(){
     var that = this
     that.setData({
       buttonshow:false,
     })
+    //选择图片
     wx.chooseMedia({
       camera: 'back',
       count: 1,
@@ -32,10 +28,11 @@ Page({
       camera: 'back',
       success(res) {
         that.setData({
-          Filepath:res.tempFiles[0].tempFilePath,
+          Filepath:res.tempFiles[0].tempFilePath,   //本地图片路径
           isshow:false
         })
         console.log(res.tempFiles[0].tempFilePath)
+        //向后端上传图片
         wx.uploadFile({
           url: getApp().globalData.webUrl+'/picture',
           filePath: that.data.Filepath,
@@ -72,9 +69,10 @@ Page({
       fail: (res) => {},
       complete: (res) => {},
     })
-
   },
-  regition(){
+
+  //识别
+  Recognization(){
     var that = this
     that.setData({
       isshow:false
@@ -92,6 +90,7 @@ Page({
       title: '识别中',
       mask: true,
     })
+    //发送识别请求
     wx.request({
       url: getApp().globalData.webUrl+'/picture?telephone='+that.data.telephone,
       method:'get',
@@ -107,6 +106,7 @@ Page({
             icon:'none',
             duration:1000
           })
+          // for循环将返回结果存储在result数组中
           var result = [];
           var index = res.data.data[2];
           for(var i=0; i<=index;i++)
@@ -115,11 +115,11 @@ Page({
               path:"http://rgbvrgbry.hb-bkt.clouddn.com/" + i + "_" +res.data.data[i],
               text:res.data.data[1][i]
             }
-            result.push(turle)
+            result.push(turle)        //将每一个字典放到数组中
           }
           that.setData({
             resultinfo:result,
-            isshow:true
+            isshow:true               //展示结果
           })
         }else{
           wx.showToast({

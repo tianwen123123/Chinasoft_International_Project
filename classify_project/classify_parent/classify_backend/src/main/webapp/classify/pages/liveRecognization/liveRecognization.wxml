@@ -1,4 +1,4 @@
-<!--pages/realtimemonitor/realtimemonitor.wxml-->
+<!--pages/liveRecognization/liveRecognization.wxml-->
 <view class="page-body">
   <radio-group class="group" bindchange="radioChange">
     <view class="label-2" wx:for="{{radioItems}}" wx:key="this">

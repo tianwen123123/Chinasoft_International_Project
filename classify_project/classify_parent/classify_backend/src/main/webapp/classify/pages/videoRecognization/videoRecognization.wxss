@@ -1,18 +1,15 @@
-/* pages/GarbageSorting/GarbageSorting.wxss */
-
+/* pages/videoRecognization/videoRecognization.wxss */
 page{
-  /* background-image:linear-gradient(to right,rgb(0, 255, 255), #66e6eb ,#91e6f5); */
-  /* background-image: radial-gradient(circle, red, yellow, green); */
   background-color: #f8f8f8;
 }
 .picdiv{
   width: 80%;
-  height: 600rpx;
-  border: 1px dashed #424242;
+  height: 470rpx;
+  border: 1px solid #424242;
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto
 }
 .bottomdiv{
   height: 300px;
@@ -28,8 +25,7 @@ page{
   align-items: center;
   margin-top: 20px;
   border-radius: 40rpx;
-  /* background-color: rgb(42, 230, 255) !important;*/
-    background-image:linear-gradient(to right,rgb(122, 49, 218), #84edf5) !important; 
+  background-image:linear-gradient(to right,rgb(128, 41, 228), #84edf5) !important; 
   }
   .rego {
     display: flex;
@@ -47,20 +43,19 @@ page{
   width: 100%;
   margin: 30px auto;
 }
+.resultvideodiv{
+  width: 80%;
+  margin: 0 auto;
+}
+.resultvedio{
+    margin: 0;
+}
 .resultimgdiv{
   width: 80%;
   margin: 0 auto;
 }
 .resultimg{
     margin: 0;
-}
-.resulttextinfo{
-  width: 80%;
-  margin: 20rpx auto;
-  font-size: 30rpx;
-}
-.resulttextinfo text{
-  font-size: 50rpx;
 }
 .telephone-box {
   width: 100%;

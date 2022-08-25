@@ -1,17 +1,16 @@
-
 <view class="container">
-    <view class="login-wrapper">
-        <view class="header">
-          <image style="height: 130px; width: 260px;" src="../../images/Login.png"></image>
-        </view>
-        <view class="form-wrapper">
-            <input type="text" name="telephone" placeholder="telephone" value="{{telephone}}" class="input-item" bindinput="inputTelephone"/>
-            <input type="password" name="password" placeholder="password" value="{{password}}" class="input-item" bindinput="inputPassword"/>
-            <view class="btn" bindtap="login">Login</view>
-        </view>
-        <view class="msg">
-            Don't have account?
-            <a  bindtap="registered">Sign up</a>
-        </view>
+  <view class="login-wrapper">
+    <view class="header">
+      <image style="height: 130px; width: 260px;" src="../../images/Login.png"></image>
     </view>
+    <view class="form-wrapper">
+      <input type="text" name="telephone" placeholder="telephone" value="{{telephone}}" class="input-item" bindinput="inputTelephone" />
+      <input type="password" name="password" placeholder="password" value="{{password}}" class="input-item" bindinput="inputPassword" />
+      <view class="btn" bindtap="login">Login</view>
+    </view>
+    <view class="msg">
+      Don't have account?
+      <a bindtap="registered">Sign up</a>
+    </view>
+  </view>
 </view>
