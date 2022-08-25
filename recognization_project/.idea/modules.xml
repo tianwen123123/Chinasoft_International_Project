@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_backend/recognization_backend.iml" filepath="$PROJECT_DIR$/classify_parent/classify_backend/recognization_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_common/recognization_common.iml" filepath="$PROJECT_DIR$/classify_parent/classify_common/recognization_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_interface/recognization_interface.iml" filepath="$PROJECT_DIR$/classify_parent/classify_interface/recognization_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/recognization_parent.iml" filepath="$PROJECT_DIR$/classify_parent/recognization_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classify_parent/classify_service_provider/recognization_service_provider.iml" filepath="$PROJECT_DIR$/classify_parent/classify_service_provider/recognization_service_provider.iml" />
+    </modules>
+  </component>
+</project>

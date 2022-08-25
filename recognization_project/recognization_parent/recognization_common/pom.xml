@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.csc.recognization</groupId>
+    <artifactId>recognization_common</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>recognization_common</name>
+    <description>recognization_common</description>
+
+    <parent>
+        <artifactId>recognization_parent</artifactId>
+        <groupId>com.csc.recognization</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>7.2.0</version>
+        </dependency>
+
+        <!--redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
+        <!--腾讯云-->
+        <dependency>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java</artifactId>
+            <!-- go to https://search.maven.org/search?q=tencentcloud-sdk-java and get the latest version. -->
+            <!-- 请到https://search.maven.org/search?q=tencentcloud-sdk-java查询所有版本，最新版本如下 -->
+            <version>3.1.322</version>
+        </dependency>
+        <!--mybatis-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>

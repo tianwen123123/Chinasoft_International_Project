@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="recognization_service_provider:war">
+    <output-path>$PROJECT_DIR$/recognization_parent/recognization_service_provider/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>recognization_service_provider</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="recognization_service_provider-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="recognization_service_provider:war exploded" />
+    </root>
+  </artifact>
+</component>

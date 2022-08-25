@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/recognization_parent" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/classify_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/classify_parent/classify_backend/pom.xml" />
+        <option value="$PROJECT_DIR$/classify_parent/classify_interface/pom.xml" />
+        <option value="$PROJECT_DIR$/classify_parent/classify_service_provider/pom.xml" />
+        <option value="$PROJECT_DIR$/classify_parent/classify_common/pom.xml" />
+        <option value="$PROJECT_DIR$/recognization_parent/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

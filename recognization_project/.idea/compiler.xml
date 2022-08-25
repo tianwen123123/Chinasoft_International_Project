@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="recognization_backend" />
+        <module name="recognization_interface" />
+        <module name="recognization_common" />
+        <module name="recognization_service_provider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="recognization_backend" target="1.5" />
+      <module name="recognization_common" target="1.5" />
+      <module name="recognization_interface" target="1.5" />
+      <module name="recognization_parent" target="1.5" />
+      <module name="recognization_service_provider" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="recognization_backend" options="" />
+      <module name="recognization_common" options="" />
+      <module name="recognization_interface" options="" />
+      <module name="recognization_service_provider" options="" />
+    </option>
+  </component>
+</project>

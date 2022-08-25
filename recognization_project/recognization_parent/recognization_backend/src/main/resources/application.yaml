@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: recognization_backend
+dubbo:
+  application:
+    name: recognization_backend
+    id: recognization_backend
+  registry:
+    address: zookeeper://192.168.23.135:2181
+  consumer:
+    timeout: 600000
+
+
+# 关闭Redis健康监测
+management:
+  health:
+    redis:
+      enabled: false
+server:
+  port: 8081
