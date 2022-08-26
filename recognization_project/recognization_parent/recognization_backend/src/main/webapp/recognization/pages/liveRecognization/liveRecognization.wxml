@@ -8,7 +8,7 @@
 </radio-group>
   <view class="page-body-wrapper">
   
-  <!-- 使用1 -->
+  <!-- 实时识别 -->
     <view class="buttondiv" wx:if="{{method0}}">
         <view class="btn_right">
             <view class="btn-area">
@@ -20,7 +20,7 @@
         </view>
     </view>
 
-  <!-- 使用2 -->
+  <!-- 车牌定位 -->
     <view class="buttondiv" wx:if="{{method1}}">
         <view class="btn_right">
             <view class="btn-area">
