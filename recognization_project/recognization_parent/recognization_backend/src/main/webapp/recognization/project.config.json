@@ -31,7 +31,7 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "useIsolateContext": true,
+        "useIsolateContext": false,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
@@ -44,7 +44,7 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.4",
-    "appid": "wx805b30b06b707e79",
+    "appid": "wx6893b242323842a5",
     "projectname": "recognization",
     "editorSetting": {
         "tabIndent": "insertSpaces",

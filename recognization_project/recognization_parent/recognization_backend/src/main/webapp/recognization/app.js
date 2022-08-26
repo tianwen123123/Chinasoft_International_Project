@@ -9,7 +9,8 @@ App({
     })
   },
   globalData: {
-    webUrl:"http://localhost:8081",
+    webUrl:"http://127.0.0.1:8081",
+    liveRequestUrl:"http://127.0.0.1:5000",
     userInfo: null
   }
 })

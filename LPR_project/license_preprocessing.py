@@ -260,7 +260,7 @@ def license_split(raw_image):
     # 灰度处理
     gray_image = cv.cvtColor(uniformed_image, cv.COLOR_RGB2GRAY)
     # 自适应阈值
-    ret, binary_image = cv.threshold(gray_image, 160, 255, cv.THRESH_BINARY)  # +cv.THRESH_OTSU
+    ret, binary_image = cv.threshold(gray_image, 170, 255, cv.THRESH_BINARY)  # +cv.THRESH_OTSU
     plate_binary_img = remove_upanddown_border(binary_image)
     cropImgs = char_segmentation(plate_binary_img)
     return cropImgs
