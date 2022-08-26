@@ -373,7 +373,6 @@ def process(p1s, p2s, plate_image, pic_url):
             # 标准化
             img = img / 32.0
 
-
             img = np.expand_dims(img, axis=2)
             img = np.expand_dims(img, axis=0)
             if j == 0:
