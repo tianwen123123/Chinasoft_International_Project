@@ -130,7 +130,7 @@ Page({
       })
       //发送请求
       wx.request({
-        url: "http://127.0.0.1:5000/live_start?telephone=" + that.data.telephone,
+        url: "http://127.0.0.1:5000/yolov5_camera_start?telephone=" + that.data.telephone,
         method: 'get',
         success: (res) => {
           console.log("请求成功")
@@ -156,7 +156,7 @@ Page({
 
       //发送请求
       wx.request({
-        url: "http://127.0.0.1:5000/live_stop?telephone=" + that.data.telephone,
+        url: "http://127.0.0.1:5000/yolov5_camera_stop?telephone=" + that.data.telephone,
         method: 'get',
         success: (res) => {
           that.setData({
@@ -203,6 +203,10 @@ Page({
       }
     }
     that.setData(changed)
+    that.setData({
+      isshow:false,
+      flag:false
+    })
     if (that.data.selectedindex == 0) {
       that.setData({
         method0: true,
