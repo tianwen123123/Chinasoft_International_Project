@@ -1,16 +1,16 @@
 // pages/liveRecognization/liveRecognization.js
 Page({
   data: {
-    show: false,
+    show: false,          //正在识别字样显示
     telephone: '',
-    isshow: false,
-    startopen: true,
-    stopopen: false,
-    startopen1:true,
-    stopopen2:false,
-    resultinfo: [],
+    isshow: false,        //识别结果
+    startopen: true,      //识别按钮
+    stopopen: false,      //停止识别按钮
+    startopen1:true,      //定位按钮
+    stopopen2:false,      //停止定位按钮
+    resultinfo: [],       
     title: "http://rh5dq0hiv.hb-bkt.clouddn.com/",
-    flag: false,
+    flag: false,          //'未监测到车牌'字样显示
     radioItems: [{
         name: '实时识别',
         value: '实时识别',
@@ -37,6 +37,7 @@ Page({
       telephone: wx.getStorageSync('telephone')
     })
   },
+  //开始识别
   start() {
     var that = this
     var disabled = "radioItems["+ 1 +"].disabled"
@@ -70,6 +71,8 @@ Page({
       })
     }
   },
+
+  //停止识别
   stop() {
     var that = this
     var disabled = "radioItems["+ 1 +"].disabled"
@@ -118,6 +121,7 @@ Page({
     }
   },
 
+  //开始车牌定位
   live_start() {
     var that = this
     var disabled = "radioItems["+ 0 +"].disabled"
@@ -149,11 +153,11 @@ Page({
     }
   },
 
+  //停止车牌定位
   live_stop() {
     var that = this
     var disabled = "radioItems["+ 0 +"].disabled"
     if (that.data.stopopen1) {
-
       //发送请求
       wx.request({
         url: "http://127.0.0.1:5000/live_stop?telephone=" + that.data.telephone,
